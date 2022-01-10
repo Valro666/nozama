@@ -28,6 +28,7 @@ public class ArticleRestController {
 	@CrossOrigin
 	@GetMapping("/article")
 	public List<Article> list() {
+		System.out.println("tarte");
 		return this.repository.findAll();
 	}
 

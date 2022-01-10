@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Version;
 
+import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
+
 @Entity
 public class CompteClient {
 	private String login;
@@ -11,10 +13,27 @@ public class CompteClient {
 	private String pass;
 	private String nom;
 	private String prenom;
-	private Panier panier;
+	// private Panier panier;
 	private int version;
 
-	@Id
+	/*
+	 * public Panier getPanier() { return panier; }
+	 * 
+	 * public void setPanier(Panier panier) { this.panier = panier; }
+	 */
+	
+	public void update(CompteClient maj) {
+		setLogin(maj.login);
+		setMail(maj.mail);
+		setPass(maj.pass);
+		setNom(maj.nom);
+		setPrenom(maj.prenom);
+		//setVersion(++maj.version);
+	}
+
+	
+
+
 	public String getMail() {
 		return mail;
 	}
@@ -55,7 +74,8 @@ public class CompteClient {
 	public void setVersion(int version) {
 		this.version = version;
 	}
-	
+
+	@Id
 	public String getLogin() {
 		return login;
 	}
@@ -64,36 +84,31 @@ public class CompteClient {
 		this.login = login;
 	}
 
-	public CompteClient()
-	{
-		
+	public CompteClient() {
+
 	}
 
-	public CompteClient(String login,String mail, String pass, String nom, String prenom) {
+	public CompteClient(String login, String mail, String pass, String nom, String prenom) {
 		super();
 		this.login = login;
 		this.mail = mail;
 		this.pass = pass;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.panier = new Panier();
+		// this.panier = new Panier();
 	}
-	public CompteClient(String login,String mail, String pass, String nom, String prenom, Panier panier) {
-		super();
-		this.login = login;
-		this.mail = mail;
-		this.pass = pass;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.panier = panier;
-	}
+
+	/*
+	 * public CompteClient(String login, String mail, String pass, String nom,
+	 * String prenom, Panier panier) { super(); this.login = login; this.mail =
+	 * mail; this.pass = pass; this.nom = nom; this.prenom = prenom; this.panier =
+	 * panier; }
+	 */
 
 	@Override
 	public String toString() {
-		return "Personne [login=" + login + ", mail=" + mail + ", pass=" + pass + ", nom=" + nom + ", prenom=" + prenom
-				+ ", version=" + version + "]";
+		return "CompteClient [login=" + login + ", mail=" + mail + ", pass=" + pass + ", nom=" + nom + ", prenom="
+				+ prenom + ", version=" + version + "]";
 	}
-
-
 
 }
