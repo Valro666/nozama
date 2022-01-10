@@ -1,0 +1,6 @@
+@startuml
+!theme black-knight
+class Example {
+  Theme spacelab
+}
+@enduml
