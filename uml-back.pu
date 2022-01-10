@@ -6,6 +6,8 @@ class Article {
   {field}   prix : int
             nom : String
             description : String
+            categorie : String
+            sousCategorie : String
             fabriquant : String
             avis : List<Avis>
     {method} getNote() : double
