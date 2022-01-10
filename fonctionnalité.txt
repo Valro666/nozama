@@ -1,0 +1,17 @@
+site de vente de vehicule ( tout type )
+
+connexion/deco
+creation compte
+modification information compte
+//supression compte
+
+suppression article Panier
+ajout article panier
+obtenir historique des achats
+visualisation du panier
+
+recherche article
+categorie des articles (terrestre, aerien, aquatique,spatial)
+sous categorie (2 roux, 4 roux, bimoteur, a reaction, sousmarin, surmarin!?,monoplace, cargo, croiseur imperial)
+....
+

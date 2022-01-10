@@ -1,6 +1,62 @@
 @startuml
-!theme black-knight
-class Example {
-  Theme spacelab
+!theme reddress-darkred
+
+package model{
+class Article {
+  {field}   prix : int
+            nom : String
+            description : String
+            fabriquant : String
+            avis : List<Avis>
+    {method} getNote() : double
 }
+
+class Avis{
+{field} note : int
+        commentaire : String
+        article : Article 
+        auteur : Personne 
+}
+class Personne {
+  {field}   login : String
+            password : String
+            nom : String
+            prenom : String
+            mail : String
+            Panier : enCour
+            List<Panier> : histo
+}
+
+class Ligne{
+{field} article : Article
+        quantity : Int
+{method} getPrix(): Double
+
+}
+class Panier {
+  {field}   panier : List<Ligne>
+            date : Date
+    {method} getPrix():Double
+}
+}
+
+package repository{
+
+}
+
+package controller {
+
+}
+Personne "*"- Panier : historique >
+Personne "1"- Panier : en cours >
+
+
+Panier "*"- Ligne :>
+
+Ligne "1"- Article
+
+Article "*"- Avis :>
+
+Avis "1"- Personne :>
+
 @enduml
