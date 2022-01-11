@@ -1,29 +1,92 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a href="#"><img src="assets/img/HRV-MOTOR.png"></a>
+      <button class="navbar-toggler" type="button">
+        <img src="assets/img/HRV-MOTOR.png">
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="javascript:void(0)">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="javascript:void(0)">Link</a>
+          </li>
+<!-- Liste déroulante 2-->
+
+
+
+
+
+
+<!-- Liste déroulante-->
+<!-- Button-->
+          <li class="nav-item dropdown ">
+                <a id="dLabel" role="button" data-toggle="dropdown" class="nav-link dropdown-toggle active"  href="#">
+                    Catégorie <span class="caret"></span>
+                </a>
+<!-- debut liste-->
+
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+
+                    <!-- 1er Choix-->
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item" href="#">Terrestre</a>
+    
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Moto</a></li>
+                          <li><a class="dropdown-item" href="#">Voiture</a></li>
+                          <li><a class="dropdown-item" href="#">Camion</a></li>
+                          <li><a class="dropdown-item" href="#">Tank</a></li>
+                          <li><a class="dropdown-item" href="#">Autres</a></li>
+                        </ul>
+    
+                      </li>
+
+                  <!-- 2eme Choix-->
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item"  href="#">Maritimes</a>
+
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Bateaux</a></li>
+                      <li><a class="dropdown-item" href="#">Sous-Marins</a></li>
+                      <li><a class="dropdown-item" href="#">Autres</a></li>
+                    </ul>
+
+                  </li>
+                  
+
+                    <!-- 3eme Choix-->
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="#">Aériens</a>
+
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Avions</a></li>
+                      <li><a class="dropdown-item" href="#">Hélicoptère</a></li>
+                      <li><a class="dropdown-item" href="#">Drone</a></li>
+                    </ul>
+
+                  </li>
+                  <!-- Fin choix-->
+                </ul>
+            
+        </ul>
+
+<!-- Fin liste déroulante-->
+
+
+        <form class="d-flex justify-content-center">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn bg-transparent text-light" type="button">Search</button>
+        </form>
+        <button class="btn bg-transparent text-light"  type="button">Connexion
+            
+        </button>
+        <button class="btn bg-transparent text-light titi" type="button">
+            
+        <img src="assets/img/panier.png" class="toto">
+        Panier 
+        </button>
+      </div>
     </div>
   </nav>

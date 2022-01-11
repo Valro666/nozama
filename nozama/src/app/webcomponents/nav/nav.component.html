@@ -12,26 +12,62 @@
           <li class="nav-item">
             <a class="nav-link active" href="javascript:void(0)">Link</a>
           </li>
+<!-- Liste déroulante 2-->
+
+
 
 <!-- Liste déroulante-->
+<!-- Button-->
+<li class="nav-item dropdown ">
+  <a id="dLabel" role="button" data-toggle="dropdown" class="nav-link dropdown-toggle active"  href="#">
+      Catégorie <span class="caret"></span>
+  </a>
+<!-- debut liste-->
 
-          <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Catégorie
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Moto</a>
-              <a class="dropdown-item" href="#">Voiture</a>
-              <a class="dropdown-item" href="#">Camion</a>
-              <a class="dropdown-item" href="#">Tank</a>
-              <a class="dropdown-item" href="#">Bateaux</a>
-              <a class="dropdown-item" href="#">Sous-marin</a>
-              <a class="dropdown-item" href="#">Avion</a>
-              <a class="dropdown-item" href="#">Vaisseaux spatiaux</a>
-              
-            </div>
-          </li>
-        </ul>
+  <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+
+      <!-- 1er Choix-->
+      <li class="dropdown-submenu">
+          <a class="dropdown-item" href="#">Terrestre</a>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Moto</a></li>
+            <li><a class="dropdown-item" href="#">Voiture</a></li>
+            <li><a class="dropdown-item" href="#">Camion</a></li>
+            <li><a class="dropdown-item" href="#">Tank</a></li>
+            <li><a class="dropdown-item" href="#">Autres</a></li>
+          </ul>
+
+        </li>
+
+    <!-- 2eme Choix-->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item"  href="#">Maritimes</a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Bateaux</a></li>
+        <li><a class="dropdown-item" href="#">Sous-Marins</a></li>
+        <li><a class="dropdown-item" href="#">Autres</a></li>
+      </ul>
+
+    </li>
+    
+
+      <!-- 3eme Choix-->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" href="#">Aériens</a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Avions</a></li>
+        <li><a class="dropdown-item" href="#">Hélicoptère</a></li>
+        <li><a class="dropdown-item" href="#">Drone</a></li>
+      </ul>
+
+    </li>
+    <!-- Fin choix-->
+  </ul>
+
+</ul>
 
 <!-- Fin liste déroulante-->
 
@@ -43,9 +79,9 @@
         <button class="btn bg-transparent text-light"  type="button">Connexion
             
         </button>
-        <button class="btn bg-transparent text-light titi" type="button">
+        <button class="btn bg-transparent text-light btnpanier" type="button">
             
-        <img src="assets/img/panier.png" class="toto">
+        <img src="assets/img/panier.png" class="imgpanier">
         Panier 
         </button>
       </div>
