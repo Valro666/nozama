@@ -11,7 +11,7 @@
 
 	<context:annotation-config></context:annotation-config>
 
-	<context:component-scan base-package="dao,service"></context:component-scan>
+	<context:component-scan base-package="controller,model"></context:component-scan>
 
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>

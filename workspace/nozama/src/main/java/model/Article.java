@@ -1,27 +1,45 @@
 package model;
 
+import java.util.Collection;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 @Entity
 public class Article {
-	@Id
+	
 	private int id;
-	private String marque;
+	private String nom;
 	private double prix;
+	private String description;
+	private String categorie;
+	private String sousCategorie;
+	private String fabricant;
+	private List<Avis> avis;
 	@Version
 	private int version;
-
+	
 	public Article() {
 	}
 
-	public Article(int id, String marque, double prix) {
+	public Article(int id, String nom, double prix, String description, String categorie, String sousCategorie,
+			String fabricant, List<Avis> avis) {
 		this.id = id;
-		this.marque = marque;
+		this.nom = nom;
 		this.prix = prix;
+		this.description = description;
+		this.categorie = categorie;
+		this.sousCategorie = sousCategorie;
+		this.fabricant = fabricant;
+		this.avis = avis;
 	}
 
+
+	@Id
 	public int getId() {
 		return id;
 	}
@@ -30,12 +48,12 @@ public class Article {
 		this.id = id;
 	}
 
-	public String getMarque() {
-		return marque;
+	public String getNom() {
+		return nom;
 	}
 
-	public void setMarque(String marque) {
-		this.marque = marque;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
 	public double getPrix() {
@@ -46,6 +64,7 @@ public class Article {
 		this.prix = prix;
 	}
 
+	@Version
 	public int getVersion() {
 		return version;
 	}
@@ -54,9 +73,60 @@ public class Article {
 		this.version = version;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(String categorie) {
+		this.categorie = categorie;
+	}
+
+	public String getSousCategorie() {
+		return sousCategorie;
+	}
+
+	public void setSousCategorie(String sousCategorie) {
+		this.sousCategorie = sousCategorie;
+	}
+
+	public String getFabricant() {
+		return fabricant;
+	}
+
+	public void setFabricant(String fabricant) {
+		this.fabricant = fabricant;
+	}
+
+	@OneToMany(mappedBy="article",fetch=FetchType.EAGER)
+	public List<Avis> getAvis() {
+		return avis;
+	}
+
+	public void setAvis(List<Avis> avis) {
+		this.avis = avis;
+	}
+	
+	public double noteAverage() {
+		double totalNotes = 0;
+		int notesAmount = 0;
+		for(Avis a: avis){
+			totalNotes += a.getNote(); 
+			notesAmount++;
+		}
+		return totalNotes/notesAmount;
+	}
+	
 	@Override
 	public String toString() {
-		return "Article [id=" + id + ", marque=" + marque + ", prix=" + prix + ", version=" + version + "]";
+		return "Article [id=" + id + ", marque=" + nom + ", prix=" + prix + ", version=" + version + "]";
 	}
 
 }

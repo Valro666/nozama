@@ -25,13 +25,14 @@ public class ArticleRestController {
 	@Autowired
 	private ArticleRepository repository;
 
+	//findAll
 	@CrossOrigin
 	@GetMapping("/article")
 	public List<Article> list() {
-		System.out.println("tarte");
 		return this.repository.findAll();
 	}
 
+	//insert
 	@CrossOrigin
 	@PostMapping("/article")
 	public void create(@RequestBody Article article) {
@@ -39,14 +40,16 @@ public class ArticleRestController {
 		this.repository.save(article);
 
 	}
-
+	
+	//findById
 	@CrossOrigin
 	@GetMapping("/article/{id}")
 	public Article findById(@PathVariable(name = "id") Integer id) {
 		return this.repository.findById(id).get();
 
 	}
-
+	
+	//update
 	@CrossOrigin
 	@PutMapping("/article")
 	public void update(@RequestBody Article article) {
@@ -55,6 +58,7 @@ public class ArticleRestController {
 
 	}
 
+	//delete
 	@CrossOrigin
 	@DeleteMapping("/article/{id}")
 	public void delete(@PathVariable(name = "id") Integer id) {
@@ -64,10 +68,37 @@ public class ArticleRestController {
 
 	}
 	
+	//findByNom
 	@CrossOrigin
-	@GetMapping("/articleCon/{id}")
-	public List<Article> containing(@PathVariable(name = "id") String id){
-		return repository.findByMarqueContaining(id);
+	@GetMapping("/articleNomCon/{nom}")
+	public List<Article> findByNom(@PathVariable(name = "nom") String nom){
+		return repository.findByNomContaining(nom);
+	}
+	
+	//findByCategorie
+	@CrossOrigin
+	@GetMapping("/articleCatCon/{categorie}")
+	public List<Article> findByCategorie(@PathVariable(name = "categorie") String categorie){
+		return repository.findByCategorieContaining(categorie);
+	}
+	//findBySousCategorie
+	@CrossOrigin
+	@GetMapping("/articleSousCatCon/{sousCategorie}")
+	public List<Article> findBySousCategorie(@PathVariable(name = "sousCategorie") String sousCategorie){
+		return repository.findBySousCategorieContaining(sousCategorie);
+	}
+	//findByFabricant
+	@CrossOrigin
+	@GetMapping("/articleSousCatCon/{fabricant}")
+	public List<Article> findByFabricant(@PathVariable(name = "fabricant") String fabricant){
+		return repository.findByFabricantContaining(fabricant);
+	}
+	
+	//findByPrix
+	@CrossOrigin
+	@GetMapping("/articlePrCon/{prix}")
+	public List<Article> containing(@PathVariable(name = "prix") int prix){
+		return repository.findByPrix(prix);
 	}
 
 	// @CrossOrigin
