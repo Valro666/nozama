@@ -2,7 +2,7 @@
 
     <!-- Ligne 1 : Titre + img + btn achat-->
     <div class="row  mt-5 pt-3 ">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
 
             <!-- Carousel -->
             <div id="carouselExampleControls" class="carousel slide" data-interval="false">
@@ -29,12 +29,16 @@
 
               <!-- Fin carousel-->
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <h1> Article n°1, Tank Master of Doom, Ramoneur 4000</h1>
             <p>Note générale</p>
             <hr>
+
+            <!-- Ligne 2 : Description-->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-        <div class="col-sm-2 border">
+<!--Module d'ajout au panier-->
+        <div class="col-sm-2 border rounded-3 ">
 
             <h3 class="text-center mt-2">125 000€</h3>
             <p>livré a : Cient - cp client</p>
@@ -47,30 +51,58 @@
                 </div>
             </div>
         </div>
+<!--Fin Module d'ajout au panier-->
+
     </div>
 
-<!-- Ligne 2 : Description-->
 
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-    
-    </div>
-
+<!-- List avis-->
     <div class="row mt-5">
-        <h2>Avis des clients</h2>
+      <div class="col-sm-10">
+        <h1>Avis des clients</h1>
         <hr>
-<!-- Avis unité -->
-        <div class="row">
+<!-- Avis unité (a généré) -->
+        <div class="row mt-3">
             <h4>Titre de l'avis</h4>
-            <div class="col-sm-4">hello</div>
-            <div class="col-sm-8">
+            <div class="col-sm-4">Note /5</div>
+            <div class="col-sm-8 mb-3">
                 <p>Description du produit qui fait boom et qui fait paf jusqu'a l'infini parce qu'il est conduit par les russes remplit de vodka de basse qualité</p>
             </div>
+            <hr>
         </div>
+<!-- Fin avis-->
+
+      </div>
     </div>
+
+<!-- Module ajout -->
+<div class="row d-flex">
+  <h2>Donnez votre avis</h2>
+  <div class="row">
+  <form>
+    <label for="titre">Titre :</label>
+    <input type="text" class="form-control" id="titre">
+    <label for="comment">Commentaire :</label>
+    <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+  </form>
+</div>
+
+<div class="row d-flex">
+  <div class="col-sm-1"><h4 class="pt-3 text-center">Note :</h4></div>
+  <div class="col-sm-3">
+    
+  <span class="rating">
+    
+    <button type="button" class="btn" title="5 etoiles">☆</button>
+    <button type="button" class="btn" title="4 etoiles">☆</button>
+    <button type="button" class="btn" title="3 etoiles">☆</button>
+    <button type="button" class="btn" title="2 etoiles">☆</button>
+    <button type="button" class="btn" title="1 etoiles">☆</button>
+  </span>
+  </div>
+
+</div>
+</div>
 </div>
 
 

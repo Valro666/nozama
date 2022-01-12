@@ -2,3 +2,21 @@
     width: 100%;
     height: 100%;
 }
+.rating{
+    direction:ltr;
+}
+
+.rating button {
+    float:right;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 2em;
+    transition: color .4s;
+ }
+ .rating button:hover,
+ .rating button:focus,
+ .rating button:hover ~ button,
+.rating button:focus ~ button {
+    color: orange;
+    cursor: pointer;
+ }
