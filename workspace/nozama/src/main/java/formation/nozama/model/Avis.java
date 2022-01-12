@@ -13,6 +13,7 @@ public class Avis {
 	@Id
 	private int id;
 	private int note;
+	private String titre;
 	private String commentaire;
 	private int articleId;
 	private int auteurId;
@@ -22,13 +23,16 @@ public class Avis {
 	public Avis() {
 	}
 
-	public Avis(int id, int note, String commentaire, Article article, CompteClient auteur) {
+	public Avis(int id, int note, String titre, String commentaire, int articleId, int auteurId) {
 		this.id = id;
 		this.note = note;
+		this.titre = titre;
 		this.commentaire = commentaire;
-		//this.article = article;
-		//this.auteur = auteur;
+		this.articleId = articleId;
+		this.auteurId = auteurId;
 	}
+
+
 
 	@Id
 	public int getId() {
@@ -54,11 +58,15 @@ public class Avis {
 	public void setCommentaire(String commentaire) {
 		this.commentaire = commentaire;
 	}
-	
-//	@ManyToOne
-//	@JoinColumn(name="ARTICLE_ID")
+		
+	public String getTitre() {
+		return titre;
+	}
 
-	
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
 	@Version
 	public int getVersion() {
 		return version;
