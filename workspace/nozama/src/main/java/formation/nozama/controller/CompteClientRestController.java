@@ -20,20 +20,20 @@ import formation.nozama.repository.CompteClientRepository;
 
 @Transactional
 @RestController
-@RequestMapping("/compte")
+@RequestMapping("client")
 public class CompteClientRestController {
 
 	@Autowired
 	private CompteClientRepository repository;
 
 	@CrossOrigin
-	@GetMapping("/client")
+	@GetMapping
 	public List<CompteClient> list() {
 		return this.repository.findAll();
 	}
 
 	@CrossOrigin
-	@GetMapping("/client/{login}")
+	@GetMapping("{login}")
 	public CompteClient getOne(@PathVariable(name = "login") String id) {
 		if (!this.repository.existsById(id)) {
 			// this.repository.save(personne);
@@ -49,7 +49,7 @@ public class CompteClientRestController {
 	}
 
 	@CrossOrigin
-	@PostMapping("/client")
+	@PostMapping
 	public String create(@RequestBody CompteClient personne) {
 		if (!this.repository.existsById(personne.getLogin())) {
 			this.repository.save(personne);
@@ -60,7 +60,7 @@ public class CompteClientRestController {
 	}
 
 	@CrossOrigin
-	@PutMapping("/client/")
+	@PutMapping
 	public String update(@RequestBody CompteClient personne) {
 		if (!this.repository.existsById(personne.getLogin())) {
 			// this.repository.save(personne);
@@ -75,7 +75,7 @@ public class CompteClientRestController {
 	}
 
 	@CrossOrigin
-	@DeleteMapping("/client/")
+	@DeleteMapping
 	public String delete(@RequestBody CompteClient personne) {
 		System.out.println("truc");
 		if (!this.repository.existsById(personne.getLogin())) {
@@ -89,7 +89,7 @@ public class CompteClientRestController {
 	}
 
 	@CrossOrigin
-	@GetMapping("/client/{log}/{pass}")
+	@GetMapping("{log}/{pass}")
 	public CompteClient findByLoginAndPass(@PathVariable(name = "log") String mail,
 			@PathVariable(name = "pass") String pass) {
 		CompteClient p = repository.findByLoginAndPass(mail, pass);

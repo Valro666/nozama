@@ -56,9 +56,10 @@ public class PanierRestController {
 	}
 	@CrossOrigin
 	@GetMapping("{id}")
-	public void findId(@PathVariable(name = "id") String id) {
+	public Panier findId(@PathVariable(name = "id") String id) {
 
-		panier_repo.findById(Integer.parseInt(id));
+		Optional<Panier> o = panier_repo.findById(Integer.parseInt(id));
+		return o.get();
 		//panier_repo.find
 		
 	}
