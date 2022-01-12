@@ -71,7 +71,6 @@ public class CompteClientRestController {
 			p.update(personne);
 			this.repository.save(p);
 			return "compte updated";
-
 		}
 	}
 

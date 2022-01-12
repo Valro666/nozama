@@ -71,16 +71,5 @@ public class Avis {
 		this.version = version;
 	}
 
-//	public CompteClient getAuteur() {
-//		return auteur;
-//	}
-//
-//	public void setAuteur(CompteClient auteur) {
-//		this.auteur = auteur;
-//	}
-//	@Override
-//	public String toString() {
-//		return "Avis [note=" + note + ", commentaire=" + commentaire + ", article=" + article + ", auteur=" + auteur
-//				+ "]";
-//	}
+
 }

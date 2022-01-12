@@ -1,24 +1,31 @@
 package formation.nozama.model;
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
 @Entity
 public class Panier {
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	int id;
-
-	ArrayList<Ligne> ligne;
-	Date date;
-	@ManyToOne
+	@ElementCollection
+	List<Ligne> ligne;
+	java.util.Date date;
+	@JoinColumn(name = "login", insertable = false, updatable = false)
+	@OneToOne
 	CompteClient client;
+	@Column(name = "login")
+	private String login;
 	@Version
 	int version;
 
@@ -47,25 +54,46 @@ public class Panier {
 	 * super(); this.ligne = ligne; this.date = date; this.client = client; }
 	 */
 
-	// @OneToMany
-	public ArrayList<Ligne> getLigne() {
+	public List<Ligne> getLigne() {
 		return ligne;
 	}
 
-	public void setLigne(ArrayList<Ligne> ligne) {
+	public void setLigne(List<Ligne> ligne) {
 		this.ligne = ligne;
 	}
 
-	public Date getDate() {
+	public java.util.Date getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDate(java.util.Date date2) {
+		this.date = date2;
 	}
-	/*
-	 * @OneToOne public CompteClient getClient() { return client; }
-	 * 
-	 * public void setClient(CompteClient client) { this.client = client; }
-	 */
+
+	public CompteClient getClient() {
+		return client;
+	}
+
+	public void setClient(CompteClient client) {
+		this.client = client;
+		this.login = client.getLogin();
+	}
+
+	@Override
+	public String toString() {
+		return "Panier [id=" + id + ", ligne=" + ligne + ", date=" + date + ", client=" + client + ", login="
+				+ login + ", version=" + version + "]";
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String getLogin) {
+		this.login = getLogin;
+	}
+
+	public void add(Ligne ligne2) {
+		ligne.add(ligne2);
+	}
 }

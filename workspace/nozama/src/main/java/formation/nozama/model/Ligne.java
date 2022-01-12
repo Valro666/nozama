@@ -1,9 +1,17 @@
 package formation.nozama.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Embeddable;
+import javax.persistence.OneToOne;
 
 @Embeddable
-public class Ligne {
+public class Ligne implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3943152008394727331L;
+	@OneToOne
 	Article article;
 	int quantity;
 
@@ -37,7 +45,7 @@ public class Ligne {
 		this.quantity = quantity;
 	}
 
-	public double getTotal() {
+	public double Total() {
 		return article.getPrix() * quantity;
 	}
 }
