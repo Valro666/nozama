@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { InfoService } from 'src/app/service/info.service';
 
 
 @Component({
@@ -14,9 +15,14 @@ export class NavComponent implements OnInit {
 
   @Input() poule = "";
 
-  constructor() { }
+  constructor(private session: InfoService) {
 
+  }
 
+  islogged() {
+    return this.session.logged;
+    //return false;
+  }
 
   ngOnInit(): void {
     this.truc = this.truc + 1;

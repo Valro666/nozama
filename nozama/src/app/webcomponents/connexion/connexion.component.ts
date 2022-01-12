@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Client } from 'src/app/model/client';
+import { InfoService } from 'src/app/service/info.service';
 
 @Component({
   selector: 'app-connexion',
@@ -11,7 +12,7 @@ import { Client } from 'src/app/model/client';
 export class ConnexionComponent implements OnInit {
   message = "";
   info = { login: null, pass: null }
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private session: InfoService) { }
 
   ngOnInit(): void {
   }
@@ -23,12 +24,11 @@ export class ConnexionComponent implements OnInit {
 
       if (reponse == null) {
         this.message = "error";
-        sessionStorage.setItem("client_logged", "false");
-        sessionStorage.setItem("client_stringifier", "");
+
       } else {
         this.message = JSON.stringify(reponse);
-        sessionStorage.setItem("client_stringifier", JSON.stringify(reponse));
-        sessionStorage.setItem("client_logged", "true");
+        this.session.logged = true;
+        this.session.client = reponse;
         this.router.navigate(["/", "deconnexion"]);
       }
     }, err => {
