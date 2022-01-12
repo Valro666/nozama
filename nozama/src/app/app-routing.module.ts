@@ -6,13 +6,15 @@ import { ConnexionComponent } from './webcomponents/connexion/connexion.componen
 import { DeconnexionComponent } from './webcomponents/deconnexion/deconnexion.component';
 import { InscriptionComponent } from './webcomponents/inscription/inscription.component';
 import { PanierComponent } from './webcomponents/panier/panier.component';
+import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
 
 const routes: Routes = [
   { path: 'article/:id', component: ArticleComponent },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'deconnexion', component: DeconnexionComponent },
   { path: 'inscription', component: InscriptionComponent },
-  { path: 'panier', component: PanierComponent }
+  { path: 'panier', component: PanierComponent },
+  { path: 'acceuil', component: AcceuilComponent }
 ];
 
 @NgModule({

@@ -14,6 +14,7 @@ import { DeconnexionComponent } from './webcomponents/deconnexion/deconnexion.co
 import { ConfigCompteComponent } from './webcomponents/config-compte/config-compte.component';
 import { FormsModule } from '@angular/forms';
 import { PanierComponent } from './webcomponents/panier/panier.component';
+import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
 
 
 
@@ -30,6 +31,7 @@ import { PanierComponent } from './webcomponents/panier/panier.component';
     DeconnexionComponent,
     ConfigCompteComponent,
     PanierComponent,
+    AcceuilComponent,
 
 
 
