@@ -1,0 +1,16 @@
+.formperso{
+    width: 25%;
+}
+
+img{
+    width: 100%;
+}
+
+.tdimg{
+    width: 200px;
+}
+
+.tdqty{
+    width: 200px;
+    text-align: center;
+}

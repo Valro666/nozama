@@ -11,6 +11,7 @@ import { ConnexionComponent } from './webcomponents/connexion/connexion.componen
 import { InscriptionComponent } from './webcomponents/inscription/inscription.component';
 import { DeconnexionComponent } from './webcomponents/deconnexion/deconnexion.component';
 import { ConfigCompteComponent } from './webcomponents/config-compte/config-compte.component';
+import { PanierComponent } from './webcomponents/panier/panier.component';
 
 
 
@@ -26,6 +27,7 @@ import { ConfigCompteComponent } from './webcomponents/config-compte/config-comp
     InscriptionComponent,
     DeconnexionComponent,
     ConfigCompteComponent,
+    PanierComponent,
 
 
 

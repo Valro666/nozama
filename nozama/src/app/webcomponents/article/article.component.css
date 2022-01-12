@@ -4,6 +4,7 @@
 }
 .rating{
     direction:ltr;
+
 }
 
 .rating button {
@@ -13,10 +14,33 @@
     font-size: 2em;
     transition: color .4s;
  }
- .rating button:hover,
- .rating button:focus,
- .rating button:hover ~ button,
+.rating button:hover,
+.rating button:focus,
+.rating button:hover ~ button,
 .rating button:focus ~ button {
     color: orange;
     cursor: pointer;
+ }
+
+ .rating a {
+    float:right;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 2em;
+    transition: color .4s;
+ }
+.rating a:hover,
+.rating a:target,
+.rating a:hover ~ a,
+.rating a:target ~ a {
+    color: orange;
+    cursor: pointer;
+ }
+
+ .env{
+     float: right;
+ }
+
+ .btnpanier{
+     background-color: orange;
  }
