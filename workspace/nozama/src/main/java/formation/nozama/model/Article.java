@@ -2,8 +2,8 @@ package formation.nozama.model;
 
 import java.util.List;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
@@ -18,7 +18,7 @@ public class Article {
 	private String categorie;
 	private String sousCategorie;
 	private String fabricant;
-	private List<Avis> avis;
+	//private List<Avis> avis;
 	@Version
 	private int version;
 	
@@ -104,25 +104,25 @@ public class Article {
 		this.fabricant = fabricant;
 	}
 
-	@OneToMany//(mappedBy="article",fetch=FetchType.EAGER)
-	public List<Avis> getAvis() {
-		return avis;
-	}
-
-	public void setAvis(List<Avis> avis) {
-		this.avis = avis;
-	}
+	//@OneToMany//(mappedBy="article",fetch=FetchType.EAGER)
+//	public List<Avis> getAvis() {
+//		return avis;
+//	}
+//
+//	public void setAvis(List<Avis> avis) {
+//		this.avis = avis;
+//	}
 	
 	
-	public double noteAverage() {
-		double totalNotes = 0;
-		int notesAmount = 0;
-		for(Avis a: avis){
-			totalNotes += a.getNote(); 
-			notesAmount++;
-		}
-		return totalNotes/notesAmount;
-	}
+//	public double noteAverage() {
+//		double totalNotes = 0;
+//		int notesAmount = 0;
+//		for(Avis a: avis){
+//			totalNotes += a.getNote(); 
+//			notesAmount++;
+//		}
+//		return totalNotes/notesAmount;
+//	}
 	
 	@Override
 	public String toString() {
