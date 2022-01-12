@@ -22,7 +22,7 @@ export class ConnexionComponent implements OnInit {
     this.http.get<Client>("http://localhost:8080/tp/client/" + this.info.login + "/" + this.info.pass).subscribe(reponse => {
 
       if (reponse == null) {
-        this.message = "error"
+        this.message = "error";
         sessionStorage.setItem("client_logged", "false");
         sessionStorage.setItem("client_stringifier", "");
       } else {

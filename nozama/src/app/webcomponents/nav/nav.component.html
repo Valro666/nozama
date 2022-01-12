@@ -1,4 +1,10 @@
-<p (pointerover)="maj()">{{log}} {{log2}}</p>
+<p (click)="maj()">{{log}} {{log2}}</p>
+<p>ici {{truc}}</p>
+<div></div>
+
+<div ng-if="test()">
+  <p>{{log2}}</p>
+</div>
 
 <nav class="navbar navbar-expand-sm navbar-dark bgcustom">
   <div class="container-fluid">
@@ -80,7 +86,6 @@
             <img src="assets/img/loupe.png" class="imgpanier">
           </button>
         </form>
-
       </div>
 
       <!--Button connexion -->
@@ -89,9 +94,7 @@
       <button class="btn btn-outline-light" role="button" type="button" routerLink="connexion">Connexion
 
       </button>
-      <ng-component *ngIf="truc=='tarte'">
-<p>tartetarte</p>
-      </ng-component>
+
 
       <!-- Button panier-->
       <button class="btn bg-transparent text-light btnpanier" type="button">
