@@ -14,6 +14,7 @@ public class Article {
 	private int id;
 	private String nom;
 	private double prix;
+	private String img;
 	private String description;
 	private String categorie;
 	private String sousCategorie;
@@ -45,6 +46,16 @@ public class Article {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public String getNom() {

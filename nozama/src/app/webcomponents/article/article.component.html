@@ -30,7 +30,7 @@
               <!-- Fin carousel-->
         </div>
         <div class="col-sm-4">
-            <h1> Article n°1, Tank Master of Doom, Ramoneur 4000</h1>
+            <h1> {{article.marque}}</h1>
             <p>Note générale</p>
             <hr>
 
@@ -40,7 +40,7 @@
 <!--Module d'ajout au panier-->
         <div class="col-sm-2 border rounded-3 ">
 
-            <h3 class="text-center mt-2">125 000€</h3>
+            <h3 class="text-center mt-2">{{article.prix}}€</h3>
             <p>livré a : Cient - cp client</p>
             <hr>
             <label for="quantite" class="form-label">Quantité :</label>
