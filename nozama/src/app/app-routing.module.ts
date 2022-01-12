@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 import { ArticleComponent } from './webcomponents/article/article.component';
 import { ConnexionComponent } from './webcomponents/connexion/connexion.component';
 import { DeconnexionComponent } from './webcomponents/deconnexion/deconnexion.component';

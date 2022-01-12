@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ConnexionComponent } from './webcomponents/connexion/connexion.componen
 import { InscriptionComponent } from './webcomponents/inscription/inscription.component';
 import { DeconnexionComponent } from './webcomponents/deconnexion/deconnexion.component';
 import { ConfigCompteComponent } from './webcomponents/config-compte/config-compte.component';
+import { FormsModule } from '@angular/forms';
 import { PanierComponent } from './webcomponents/panier/panier.component';
 
 
@@ -34,7 +36,10 @@ import { PanierComponent } from './webcomponents/panier/panier.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+    //NgModule
   ],
   providers: [],
   bootstrap: [AppComponent]

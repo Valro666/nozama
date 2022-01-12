@@ -1,98 +1,105 @@
+<p (pointerover)="maj()">{{log}} {{log2}}</p>
+
 <nav class="navbar navbar-expand-sm navbar-dark bgcustom">
-    <div class="container-fluid">
-        <a href="#"><img src="assets/img/HRV-MOTOR.png"></a>
-      <button class="navbar-toggler" type="button">
-        <img src="assets/img/HRV-MOTOR.png">
-      </button>
-      <div class="collapse navbar-collapse " id="mynavbar">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="javascript:void(0)">Accueil</a>
-          </li>
-<!-- Liste déroulante 2-->
+  <div class="container-fluid">
+    <a href="#"><img src="assets/img/HRV-MOTOR.png"></a>
+    <button class="navbar-toggler" type="button">
+      <img src="assets/img/HRV-MOTOR.png">
+    </button>
+    <div class="collapse navbar-collapse " id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="javascript:void(0)">Accueil</a>
+        </li>
+        <!-- Liste déroulante 2-->
 
 
 
-<!-- Liste déroulante-->
-<!-- Button-->
-<li class="nav-item dropdown ">
-  <a id="dLabel" role="button" data-toggle="dropdown" class="nav-link dropdown-toggle active"  href="#">
-      Catégorie <span class="caret"></span>
-  </a>
-<!-- debut liste-->
+        <!-- Liste déroulante-->
+        <!-- Button-->
+        <li class="nav-item dropdown ">
+          <a id="dLabel" role="button" data-toggle="dropdown" class="nav-link dropdown-toggle active" href="#">
+            Catégorie <span class="caret"></span>
+          </a>
+          <!-- debut liste-->
 
-  <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+          <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
 
-      <!-- 1er Choix-->
-      <li class="dropdown-submenu">
-          <a class="dropdown-item" href="#">Terrestre</a>
+            <!-- 1er Choix-->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item" href="#">Terrestre</a>
 
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Moto</a></li>
-            <li><a class="dropdown-item" href="#">Voiture</a></li>
-            <li><a class="dropdown-item" href="#">Camion</a></li>
-            <li><a class="dropdown-item" href="#">Tank</a></li>
-            <li><a class="dropdown-item" href="#">Autres</a></li>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Moto</a></li>
+                <li><a class="dropdown-item" href="#">Voiture</a></li>
+                <li><a class="dropdown-item" href="#">Camion</a></li>
+                <li><a class="dropdown-item" href="#">Tank</a></li>
+                <li><a class="dropdown-item" href="#">Autres</a></li>
+              </ul>
+
+            </li>
+
+            <!-- 2eme Choix-->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item" href="#">Maritimes</a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Bateaux</a></li>
+                <li><a class="dropdown-item" href="#">Sous-Marins</a></li>
+                <li><a class="dropdown-item" href="#">Autres</a></li>
+              </ul>
+
+            </li>
+
+
+            <!-- 3eme Choix-->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item" href="#">Aériens</a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Avions</a></li>
+                <li><a class="dropdown-item" href="#">Hélicoptère</a></li>
+                <li><a class="dropdown-item" href="#">Drone</a></li>
+              </ul>
+
+            </li>
+            <!-- Fin choix-->
           </ul>
 
-        </li>
-
-    <!-- 2eme Choix-->
-    <li class="dropdown-submenu">
-      <a class="dropdown-item"  href="#">Maritimes</a>
-
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Bateaux</a></li>
-        <li><a class="dropdown-item" href="#">Sous-Marins</a></li>
-        <li><a class="dropdown-item" href="#">Autres</a></li>
       </ul>
 
-    </li>
-    
+      <!-- Fin liste déroulante-->
 
-      <!-- 3eme Choix-->
-    <li class="dropdown-submenu">
-      <a class="dropdown-item" href="#">Aériens</a>
-
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Avions</a></li>
-        <li><a class="dropdown-item" href="#">Hélicoptère</a></li>
-        <li><a class="dropdown-item" href="#">Drone</a></li>
-      </ul>
-
-    </li>
-    <!-- Fin choix-->
-  </ul>
-
-</ul>
-
-<!-- Fin liste déroulante-->
-
-<!-- Bars gauche-->
-<!-- Recherche-->
+      <!-- Bars gauche-->
+      <!-- Recherche-->
       <div class="row  justify-content-center">
-        
+
         <form class="d-flex recherche ">
           <input class="form-control me-2 recherche" type="text" placeholder="Search">
           <button class="btn bg-transparent text-light" type="button">
             <img src="assets/img/loupe.png" class="imgpanier">
           </button>
         </form>
-     
+
       </div>
 
-        <!--Button connexion -->
-        <button class="btn btn-outline-light"  role="button" type="button" routerLink="connexion">Connexion
-            
-        </button>
+      <!--Button connexion -->
 
-        <!-- Button panier-->
-        <button class="btn bg-transparent text-light btnpanier" type="button" routerLink="panier">
-            
+
+      <button class="btn btn-outline-light" role="button" type="button" routerLink="connexion">Connexion
+
+      </button>
+      <ng-component *ngIf="truc=='tarte'">
+<p>tartetarte</p>
+      </ng-component>
+
+      <!-- Button panier-->
+      <button class="btn bg-transparent text-light btnpanier" type="button">
+
         <img src="assets/img/panier.png" class="imgpanier">
-        Panier 
-        </button>
+        Panier
+      </button>
 
-      </div>
     </div>
-  </nav>
+  </div>
+</nav>

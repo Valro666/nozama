@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-deconnexion',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeconnexionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
   }
-
+  deco() {
+    sessionStorage.setItem("client_logged", "false");
+    sessionStorage.setItem("client_stringifier", "");
+    this.router.navigate(["/", "#"]);
+  }
 }
