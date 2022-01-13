@@ -8,6 +8,7 @@ import { InscriptionComponent } from './webcomponents/inscription/inscription.co
 import { PanierComponent } from './webcomponents/panier/panier.component';
 import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
 import { SouscategorieComponent } from './webcomponents/souscategorie/souscategorie.component';
+import { CategorieComponent } from './webcomponents/categorie/categorie.component';
 
 const routes: Routes = [
   { path: 'article/:id', component: ArticleComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'inscription', component: InscriptionComponent },
   { path: 'panier', component: PanierComponent },
   { path: 'acceuil', component: AcceuilComponent },
-  { path: 'souscatégorie/:souscat', component: SouscategorieComponent }
+  { path: 'souscatégorie/:souscat', component: SouscategorieComponent },
+  { path: 'categorie/:categorie', component: CategorieComponent }
 ];
 
 @NgModule({

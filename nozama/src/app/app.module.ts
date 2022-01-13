@@ -17,6 +17,7 @@ import { PanierComponent } from './webcomponents/panier/panier.component';
 import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
 import { InfoService } from './service/info.service';
 import { SouscategorieComponent } from './webcomponents/souscategorie/souscategorie.component';
+import { CategorieComponent } from './webcomponents/categorie/categorie.component';
 
 
 
@@ -35,6 +36,7 @@ import { SouscategorieComponent } from './webcomponents/souscategorie/souscatego
     PanierComponent,
     AcceuilComponent,
     SouscategorieComponent,
+    CategorieComponent,
     //InfoService
 
 
