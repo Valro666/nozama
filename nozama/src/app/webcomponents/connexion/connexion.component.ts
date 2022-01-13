@@ -10,9 +10,9 @@ import { InfoService } from 'src/app/service/info.service';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
-  client:Client;
-  message ="";
-  info = { login: null, pass: null }
+  client: Client;
+  message = "";
+  info = { login: "", pass: "" }
   constructor(private http: HttpClient, private router: Router, private session: InfoService) { }
 
   ngOnInit(): void {
@@ -29,15 +29,26 @@ export class ConnexionComponent implements OnInit {
       } else {
         this.client = reponse;
         this.router.navigate(["/", "acceuil"]);
-        let j = JSON.stringify(["true","" ]);
+        let j = JSON.stringify(["true", ""]);
         localStorage.setItem("etat_service", j)
-        localStorage.setItem("infoclient",JSON.stringify(this.client));
+        localStorage.setItem("infoclient", JSON.stringify(this.client));
         //sessionStorage.setItem("etat_service", "JSON.stringify(this.session)")
         //this.session.toSession()
       }
     }, err => {
       this.message = "erreur login/mot de passe";
     })
+  }
+
+  brutal() {
+    return (this.info.login == "" || this.info.pass == "")
+  }
+
+  error() {
+    if (this.message == "error")
+      return true;
+
+    return false;
   }
 
 }
