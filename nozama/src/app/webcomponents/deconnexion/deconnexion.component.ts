@@ -14,7 +14,7 @@ export class DeconnexionComponent implements OnInit {
   constructor(private router: Router, private info: InfoService) { }
 
   ngOnInit(): void {
-    this.debug = this.debug + sessionStorage.getItem("etat_service")
+    this.debug = this.debug + localStorage.getItem("infoclient")
   }
   deco() {
     //sessionStorage.setItem("client_logged", "false");
@@ -22,6 +22,6 @@ export class DeconnexionComponent implements OnInit {
     this.info.client = null;
     this.info.logged = false;
     this.router.navigate(["/", "connexion"]);
-    sessionStorage.setItem("etat_service", null);
+    localStorage.setItem("etat_service", null);
   }
 }

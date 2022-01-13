@@ -10,7 +10,8 @@ import { InfoService } from 'src/app/service/info.service';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
-  message = "";
+  client:Client;
+  message ="";
   info = { login: null, pass: null }
   constructor(private http: HttpClient, private router: Router, private session: InfoService) { }
 
@@ -26,10 +27,11 @@ export class ConnexionComponent implements OnInit {
         this.message = "error";
 
       } else {
-        this.message = JSON.stringify(reponse);
+        this.client = reponse;
         this.router.navigate(["/", "deconnexion"]);
-        let j = JSON.stringify(["true", this.message]);
-        sessionStorage.setItem("etat_service", j)
+        let j = JSON.stringify(["true","" ]);
+        localStorage.setItem("etat_service", j)
+        localStorage.setItem("infoclient",JSON.stringify(this.client));
         //sessionStorage.setItem("etat_service", "JSON.stringify(this.session)")
         //this.session.toSession()
       }

@@ -14,7 +14,7 @@ export class ArticleComponent implements OnInit {
     ;
   panier: Array<Article>;
   avis: any
-  newavis = { articleId: 0, auteur_id: NaN, commentaire: null, titre: null, note: NaN }
+  newavis = { articleId: 0, auteur_id: null, commentaire: null, titre: null, note: NaN }
   message: string
   moyenne: any
   
@@ -86,6 +86,9 @@ export class ArticleComponent implements OnInit {
 
   addavis() {
 
+    
+    let b = JSON.parse(localStorage.getItem('infoclient'));
+    this.newavis.auteur_id = b.nom + " " + b.prenom;
 
     const body = JSON.stringify(this.newavis);
     this.http.post("http://localhost:8080/tp/api/avis", body, {

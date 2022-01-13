@@ -20,7 +20,7 @@ export class NavComponent implements OnInit {
   }
 
   islogged() {
-    let log = JSON.parse(sessionStorage.getItem("etat_service"));
+    let log = JSON.parse(localStorage.getItem("etat_service"));
     if (log == null) {
       return false;
     }
