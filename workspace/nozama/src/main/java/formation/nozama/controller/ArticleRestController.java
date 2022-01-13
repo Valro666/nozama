@@ -87,12 +87,12 @@ public class ArticleRestController {
 	public List<Article> findBySousCategorie(@PathVariable(name = "sousCategorie") String sousCategorie){
 		return repository.findBySousCategorieContaining(sousCategorie);
 	}
-	//findByFabricant
-	@CrossOrigin
-	@GetMapping("/articleSousCatCon/{fabricant}")
-	public List<Article> findByFabricant(@PathVariable(name = "fabricant") String fabricant){
-		return repository.findByFabricantContaining(fabricant);
-	}
+//	//findByFabricant
+//	@CrossOrigin
+//	@GetMapping("/articleSousCatCon/{fabricant}")
+//	public List<Article> findByFabricant(@PathVariable(name = "fabricant") String fabricant){
+//		return repository.findByFabricantContaining(fabricant);
+//	}
 	
 	//findByPrix
 	@CrossOrigin

@@ -7,6 +7,7 @@ import { DeconnexionComponent } from './webcomponents/deconnexion/deconnexion.co
 import { InscriptionComponent } from './webcomponents/inscription/inscription.component';
 import { PanierComponent } from './webcomponents/panier/panier.component';
 import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
+import { SouscategorieComponent } from './webcomponents/souscategorie/souscategorie.component';
 
 const routes: Routes = [
   { path: 'article/:id', component: ArticleComponent },
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: 'inscription', component: InscriptionComponent },
   { path: 'panier', component: PanierComponent },
   { path: 'acceuil', component: AcceuilComponent },
-  { path: 'souscatégorie/:souscat', component: AcceuilComponent }
+  { path: 'souscatégorie/:souscat', component: SouscategorieComponent }
 ];
 
 @NgModule({
