@@ -3,6 +3,7 @@ package formation.nozama.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import formation.nozama.model.Article;
 
@@ -13,4 +14,6 @@ public interface ArticleRepository extends JpaRepository<Article, Integer> {
 	List<Article> findByFabricantContaining(String Fabricant);
 	List<Article> findByPrix(int prix);
 
+	//@Query("SELECT DISTINCT categorie FROM article")
+	//List<Object> findDistinctStates();
 }

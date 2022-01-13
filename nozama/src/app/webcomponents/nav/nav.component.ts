@@ -34,9 +34,11 @@ export class NavComponent implements OnInit {
     //this.maj();
     //this.session.fromSession();
   }
-
+  bonjour() {
+    return JSON.parse(localStorage.getItem("infoclient")).nom
+  }
 
   clear_sessionStorage() {
-    sessionStorage.clear();
+    localStorage.clear();
   }
 }

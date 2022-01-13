@@ -35,28 +35,27 @@ public class CompteClientRestController {
 	@CrossOrigin
 	@GetMapping("{login}")
 	public CompteClient getOne(@PathVariable(name = "login") String id) {
-		if (!this.repository.existsById(id)) {
-			// this.repository.save(personne);
-			// return "Compte inconnu ";
-			return null;
-		} else {
-			Optional<CompteClient> o = this.repository.findById(id);
-			CompteClient p = o.get();
-			return p;
-
-		}
+		return this.repository.findById(id).get();
+		/*
+		 * if (!this.repository.existsById(id)) { // this.repository.save(personne); //
+		 * return "Compte inconnu "; return null; } else { Optional<CompteClient> o =
+		 * this.repository.findById(id); CompteClient p = o.get(); return p;
+		 * 
+		 * }
+		 */
 
 	}
 
 	@CrossOrigin
 	@PostMapping
-	public String create(@RequestBody CompteClient personne) {
-		if (!this.repository.existsById(personne.getLogin())) {
-			this.repository.save(personne);
-			return "Compte create";
-		} else {
-			return "Erreur, l'article existe d�j�";
-		}
+	public void create(@RequestBody CompteClient personne) {
+		this.repository.save(personne);
+
+		/*
+		 * if (!this.repository.existsById(personne.getLogin())) {
+		 * this.repository.save(personne); return "Compte create"; } else { return
+		 * "Erreur, le compte existe deja"; }//
+		 */
 	}
 
 	@CrossOrigin

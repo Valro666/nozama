@@ -28,7 +28,7 @@ export class ConnexionComponent implements OnInit {
 
       } else {
         this.client = reponse;
-        this.router.navigate(["/", "deconnexion"]);
+        this.router.navigate(["/", "acceuil"]);
         let j = JSON.stringify(["true","" ]);
         localStorage.setItem("etat_service", j)
         localStorage.setItem("infoclient",JSON.stringify(this.client));
