@@ -1,11 +1,3 @@
-
-<p>ici >{{islogged()}}< </p>
-    <div></div>
-
-    <div ng-if="test()">
-      <p>{{log2}}</p>
-    </div>
-
     <nav class="navbar navbar-expand-sm navbar-dark bgcustom">
       <div class="container-fluid">
         <a routerLink="acceuil"><img src="assets/img/HRV-MOTOR.png"></a>
@@ -40,7 +32,7 @@
                     <li><a class="dropdown-item" href="#">Moto</a></li>
                     <li><a class="dropdown-item" href="#">Voiture</a></li>
                     <li><a class="dropdown-item" href="#">Camion</a></li>
-                    <li><a class="dropdown-item" href="#">Tank</a></li>
+                    <li><a class="dropdown-item" routerLink="souscatégorie/Tank">Tank</a></li>
                     <li><a class="dropdown-item" href="#">Autres</a></li>
                   </ul>
 
@@ -109,7 +101,7 @@
 
 
           <!-- Button panier-->
-          <button class="btn bg-transparent text-light btnpanier" type="button">
+          <button class="btn bg-transparent text-light btnpanier" type="button" routerLink="panier">
 
             <img src="assets/img/panier.png" class="imgpanier">
             Panier

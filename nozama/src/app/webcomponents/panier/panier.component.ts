@@ -10,7 +10,7 @@ import { Article } from 'src/app/class/article';
 })
 export class PanierComponent implements OnInit {
   panier: Array<Article>
-  prixtttab:number
+  prixtttab:number[]
   prixtt = 0
   constructor() { }
 
@@ -35,7 +35,8 @@ export class PanierComponent implements OnInit {
 
   prixligne(x){
     x.prixtotal = x.prix*x.quantite
-    this.prixtt=this.prixtt+x.prixtotal
+    
+   
     return x.prixtotal
   }
 

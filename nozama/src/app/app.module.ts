@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { PanierComponent } from './webcomponents/panier/panier.component';
 import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
 import { InfoService } from './service/info.service';
+import { SouscategorieComponent } from './webcomponents/souscategorie/souscategorie.component';
 
 
 
@@ -33,6 +34,7 @@ import { InfoService } from './service/info.service';
     ConfigCompteComponent,
     PanierComponent,
     AcceuilComponent,
+    SouscategorieComponent,
     //InfoService
 
 

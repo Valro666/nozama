@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'deconnexion', component: DeconnexionComponent },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'panier', component: PanierComponent },
-  { path: 'acceuil', component: AcceuilComponent }
+  { path: 'acceuil', component: AcceuilComponent },
+  { path: 'souscatégorie/:souscat', component: AcceuilComponent }
 ];
 
 @NgModule({
