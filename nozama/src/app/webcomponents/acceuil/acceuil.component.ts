@@ -43,18 +43,7 @@ tabArticles:any
         arrOfarr.push(row);
     }
      return arrOfarr;
-}
-    cutOutArticles(){
-      
-      for (let i = 0; i < 2; i++) {
-        for (let j = 0; j < 4; j++) {
-          this.tabArticles[i][j]=this.article[i];
-        }
-      }
-     
-    }
-  
- 
+  }
 
 }
 

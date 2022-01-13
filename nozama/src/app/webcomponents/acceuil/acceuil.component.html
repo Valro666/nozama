@@ -1,11 +1,14 @@
 <div class="container justify-content-center">
+
     <table style="margin-top: 20px;">
         <tr *ngFor="let row of buildArr(tabArticles)">
             <td *ngFor="let a of row">
 
                 <div  class="col-sm-4">
                     <div class="card" style="margin: 10px;"> 
-                        <div class="card-img-art"><img src={{a.img}} class="card-img-top" width="100%"></div>
+                        <div class="col-xs-6 col-sm-12 hover-fade">
+                            <div class="card-img-art"><img src="assets/img/{{a.img}}.png" routerLink="/article/:{{a.id}}" class="card-img-top" width="100%"></div>
+                        </div>
                         <div class="card-body pt-0 px-0">
                             <div class="d-flex flex-row justify-content-center">
                                 <h6>{{a.nom}}</h6>
