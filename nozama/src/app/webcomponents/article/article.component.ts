@@ -17,6 +17,7 @@ export class ArticleComponent implements OnInit {
   newavis = { articleId: 0, auteur_id: NaN, commentaire: null, titre: null, note: NaN }
   message: string
   moyenne: any
+  
 
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
@@ -34,8 +35,19 @@ export class ArticleComponent implements OnInit {
   }
 
   addpanier() {
+    let trouver=false;
     this.panier = JSON.parse(localStorage.getItem('panier'));
-    this.panier.push(this.article);
+    this.panier.forEach(element => {
+      if(element.id == this.id){
+        element.quantite = element.quantite + this.article.quantite;
+        trouver=true;
+      }
+      
+      
+    });
+    if(trouver == false){
+      this.panier.push(this.article);
+    }
     localStorage.setItem("panier", JSON.stringify(this.panier));
     this.router.navigate(["/", "panier"]);
   }

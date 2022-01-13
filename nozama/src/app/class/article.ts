@@ -1,3 +1,5 @@
+import { calcPossibleSecurityContexts } from "@angular/compiler/src/template_parser/binding_parser";
+
 export class Article {
     id:number;
     nom:string;
@@ -8,5 +10,12 @@ export class Article {
     sousCategorie:string;
     fabricant:string;
     version:number;
-    
+    quantite:number;
+    prixtotal:number
+
+    calcultt(){
+     this.prix*this.quantite;
+
+        
+            }
 }

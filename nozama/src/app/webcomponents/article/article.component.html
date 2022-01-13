@@ -6,7 +6,7 @@
 
             <!-- Carousel -->
             <img class="d-block w-100" src="assets/img/{{article.img}}.png" alt="First slide">
-
+            
               <!-- Fin carousel-->
         </div>
         <div class="col-sm-4">
@@ -25,7 +25,7 @@
             <hr>
             <label for="quantite" class="form-label">Quantité :</label>
             <div class="text-center">
-                <input type="number" id="quantite" class="form-control " value="1">
+                <input type="number" id="quantite" class="form-control " value="1" [(ngModel)]="article.quantite">
                 <div class="d-grid">
                     <button type="button" class="btn btn-warning mt-2" (click)="addpanier()">Ajouter au panier</button>
                     <button type="button" class="btn btnpanier mt-2">Acheter ce produit</button>

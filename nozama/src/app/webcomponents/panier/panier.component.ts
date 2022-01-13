@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 import { Article } from 'src/app/class/article';
 
 @Component({
@@ -9,11 +10,15 @@ import { Article } from 'src/app/class/article';
 })
 export class PanierComponent implements OnInit {
   panier: Array<Article>
+  prixtttab:number
+  prixtt = 0
   constructor() { }
 
 
   ngOnInit(): void {
     this.panier = JSON.parse(localStorage.getItem('panier'));
+    
+    
   }
 
   deletearticle(x) {
@@ -23,5 +28,19 @@ export class PanierComponent implements OnInit {
 
 
   }
+
+  majpanier(){
+    localStorage.setItem("panier", JSON.stringify(this.panier));
+  }
+
+  prixligne(x){
+    x.prixtotal = x.prix*x.quantite
+    this.prixtt=this.prixtt+x.prixtotal
+    return x.prixtotal
+  }
+
+ 
+
+ 
 
 }
