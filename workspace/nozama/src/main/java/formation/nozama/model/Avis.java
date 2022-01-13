@@ -12,7 +12,7 @@ import javax.persistence.Version;
 
 @Entity
 public class Avis {
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	
 	private int id;
 	private int note;
 	private String titre;
@@ -37,6 +37,7 @@ public class Avis {
 
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public int getId() {
 		return id;
 	}

@@ -12,17 +12,17 @@ public class CompteClient {
 	private String pass;
 	private String nom;
 	private String prenom;
-	private Panier panier;
+	//private Panier panier;
 	private int version;
 	
-	@OneToOne
-	public Panier getPanier() {
-		return panier;
-	}
-
-	public void setPanier(Panier panier) {
-		this.panier = panier;
-	}
+//	@OneToOne
+//	public Panier getPanier() {
+//		return panier;
+//	}
+//
+//	public void setPanier(Panier panier) {
+//		this.panier = panier;
+//	}
 
 	public void update(CompteClient maj) {
 		setLogin(maj.login);
@@ -93,7 +93,7 @@ public class CompteClient {
 		this.pass = pass;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.panier = new Panier();
+		//this.panier = new Panier();
 	}
 
 	/*
