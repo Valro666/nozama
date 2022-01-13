@@ -1,232 +1,48 @@
 <div class="container justify-content-center">
+    <table style="margin-top: 20px;">
+        <tr *ngFor="let row of buildArr(tabArticles)">
+            <td *ngFor="let a of row">
 
-    <div class="row mt-5" style="padding: 10px; border: 1px solid green;">
-        <div class="col-sm-4" style="border: 1px solid red;">
-            <div class="card"> 
-                <div class="card-img-art"><img src="assets/img/tank_0.png" class="card-img-top" width="100%"></div>
-                <div class="card-body pt-0 px-0">
-                    <div class="d-flex flex-row justify-content-center">
-                        <h6>Ramoneur 4000</h6>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Catégorie: Terrestre - blindé</small>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">STARTING AT</small>
-                        <h6>&euro;35,000,000&ast;</h6>
-                    </div>
-                    <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
-                        <div class="d-flex flex-column"><span class="text-muted">Fuel Capacity</span><small class="text-muted">Litres&ast;</small></div>
-                        <div class="d-flex flex-column">
-                            <h5 class="mb-0">1400 L</h5><small class="text-muted text-right">(city/Hwy)</small>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between p-3 mid">
-                        <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px" height="25px">
-                                <div class="d-flex flex-column ml-1"><small class="ghj">1,119 kW</small><small class="ghj">V12 water-cooled <br>diesel</small></div>
+                <div  class="col-sm-4">
+                    <div class="card" style="margin: 10px;"> 
+                        <div class="card-img-art"><img src={{a.img}} class="card-img-top" width="100%"></div>
+                        <div class="card-body pt-0 px-0">
+                            <div class="d-flex flex-row justify-content-center">
+                                <h6>{{a.nom}}</h6>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Catégorie: {{a.categorie}} - {{a.sousCategorie}}</small>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">STARTING AT</small>
+                                <h6>{{a.prix}}&euro;</h6>
+                            </div>
+                            <hr class="mt-2 mx-3">
+                            <div class="d-flex flex-row justify-content-between px-3 pb-3">
+                                <div class="d-flex flex-column"><span class="text-muted">Fabricant</span></div>
+                                <div class="d-flex flex-column">
+                                    <h5 class="mb-0">{{a.fabricant}}</h5>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between p-3 mid">
+                                <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px" height="25px">
+                                        <div class="d-flex flex-column ml-1"><small class="ghj">1,119 kW</small><small class="ghj">V12 water-cooled <br>diesel</small></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
+                                        <h6 class="ml-1">1,500 hp&ast;</h6>
+                                    </div>
+                                </div>
+                        </div> 
+                            <div class="text-center"><small class="text-muted key pl-3">Standard key Features</small>
+                                <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-secondary btn-block"><small>ADD TO CART</small></button></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
                             </div>
                         </div>
-                        <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
-                                <h6 class="ml-1">1,500 hp&ast;</h6>
-                            </div>
-                        </div>
-                </div> 
-                    <div class="text-center"><small class="text-muted key pl-3">Standard key Features</small>
-                        <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-secondary btn-block"><small>ADD TO CART</small></button></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card"> 
-                <div class="card-img-art"><img src="assets/img/clio4.png" class="card-img-top" width="100%"></div>
-                <div class="card-body pt-0 px-0">
-                    <div class="d-flex flex-row justify-content-center">
-                        <h6>Clio 4</h6>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Catégorie: Terrestre - 4 roues</small>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">STARTING AT</small>
-                        <h6>&euro;14,000&ast;</h6>
-                    </div>
-                    <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
-                        <div class="d-flex flex-column"><span class="text-muted">Fuel Capacity</span><small class="text-muted">Litres&ast;</small></div>
-                        <div class="d-flex flex-column">
-                            <h5 class="mb-0">45 L</h5><small class="text-muted text-right">(city/Hwy)</small>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between p-3 mid">
-                        <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px" height="25px">
-                                <div class="d-flex flex-column ml-1"><small class="ghj">90 kW</small><small class="ghj">1,5 L dCi 75/90/11 <br>diesel</small></div>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
-                                <h6 class="ml-1">90 hp&ast;</h6>
-                            </div>
-                        </div>
-                </div> 
-                    <div class="text-center"><small class="text-muted key pl-3">Standard key Features</small>
-                        <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-secondary btn-block"><small>ADD TO CART</small></button></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card"> 
-                <div class="card-img-art"><img src="assets/img/cessna310.png" class="card-img-top" width="100%"></div>
-                <div class="card-body pt-0 px-0">
-                    <div class="d-flex flex-row justify-content-center">
-                        <h6>Cessna 310</h6>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Catégorie: aérien - bimoteur</small>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">STARTING AT</small>
-                        <h6>&euro;147,750&ast;</h6>
-                    </div>
-                    <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
-                        <div class="d-flex flex-column"><span class="text-muted">Fuel Capacity</span><small class="text-muted">Litres&ast;</small></div>
-                        <div class="d-flex flex-column">
-                            <h5 class="mb-0">45 L</h5><small class="text-muted text-right">(city/Hwy)</small>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between p-3 mid">
-                        <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px" height="25px">
-                                <div class="d-flex flex-column ml-1"><small class="ghj">400 kW</small><small class="ghj">Continental O-470 <br>essence</small></div>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
-                                <h6 class="ml-1">400 hp&ast;</h6>
-                            </div>
-                        </div>
-                </div> 
-                    <div class="text-center"><small class="text-muted key pl-3">Standard key Features</small>
-                        <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-secondary btn-block"><small>ADD TO CART</small></button></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> 
+            </td>
+              
+        </tr>
     
-    <div class="row mt-5" style="padding: 10px; border: 1px solid green;">
-        <div class="col-sm-4" style="border: 1px solid red;">
-            <div class="card"> 
-                <div class="card-img-art"><img src="assets/img/yamahar7.png" class="card-img-top" width="100%"></div>
-                <div class="card-body pt-0 px-0">
-                    <div class="d-flex flex-row justify-content-center">
-                        <h6>Yamaha R7</h6>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Catégorie: Terrestre - 2 roues</small>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">STARTING AT</small>
-                        <h6>&euro;9,500&ast;</h6>
-                    </div>
-                    <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
-                        <div class="d-flex flex-column"><span class="text-muted">Fuel Capacity</span><small class="text-muted">Litres&ast;</small></div>
-                        <div class="d-flex flex-column">
-                            <h5 class="mb-0">23 L</h5><small class="text-muted text-right">(city/Hwy)</small>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between p-3 mid">
-                        <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px" height="25px">
-                                <div class="d-flex flex-column ml-1"><small class="ghj">79 kW</small><small class="ghj">749 cc <br>liquid-cooled 4-stroke</small></div>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
-                                <h6 class="ml-1">106 hp&ast;</h6>
-                            </div>
-                        </div>
-                </div> 
-                    <div class="text-center"><small class="text-muted key pl-3">Standard key Features</small>
-                        <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-secondary btn-block"><small>ADD TO CART</small></button></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card"> 
-                <div class="card-img-art"><img src="assets/img/lockheed sr-71.png" class="card-img-top" width="100%"></div>
-                <div class="card-body pt-0 px-0">
-                    <div class="d-flex flex-row justify-content-center">
-                        <h6>Lockheed SR-71</h6>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Catégorie: Aérien - Réaction</small>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">STARTING AT</small>
-                        <h6>&euro;280,000,000&ast;</h6>
-                    </div>
-                    <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
-                        <div class="d-flex flex-column"><span class="text-muted">Fuel Capacity</span><small class="text-muted">Litres&ast;</small></div>
-                        <div class="d-flex flex-column">
-                            <h5 class="mb-0">36000 L</h5><small class="text-muted text-right">(city/Hwy)</small>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between p-3 mid">
-                        <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px" height="25px">
-                                <div class="d-flex flex-column ml-1"><small class="ghj">144 kN</small><small class="ghj">Pratt & Whitney J58<br>(JT11D-20A)</small></div>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
-                                <h6 class="ml-1">144,000 hp&ast;</h6>
-                            </div>
-                        </div>
-                </div> 
-                    <div class="text-center"><small class="text-muted key pl-3">Standard key Features</small>
-                        <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-secondary btn-block"><small>ADD TO CART</small></button></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card"> 
-                <div class="card-img-art"><img src="assets/img/m1abrams.png" class="card-img-top" width="100%"></div>
-                <div class="card-body pt-0 px-0">
-                    <div class="d-flex flex-row justify-content-center">
-                        <h6>M1 Abrams</h6>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">Catégorie: terrestre - blindé</small>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small class="text-muted mt-1">STARTING AT</small>
-                        <h6>&euro;5,300,000&ast;</h6>
-                    </div>
-                    <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
-                        <div class="d-flex flex-column"><span class="text-muted">Fuel Capacity</span><small class="text-muted">Litres&ast;</small></div>
-                        <div class="d-flex flex-column">
-                            <h5 class="mb-0">1 909 L</h5><small class="text-muted text-right">(city/Hwy)</small>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row justify-content-between p-3 mid">
-                        <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px" height="25px">
-                                <div class="d-flex flex-column ml-1"><small class="ghj">1 119 kW</small><small class="ghj">	Turbomoteur <br>AGT-1500</small></div>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
-                            <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
-                                <h6 class="ml-1">1 501 hp&ast;</h6>
-                            </div>
-                        </div>
-                </div> 
-                    <div class="text-center"><small class="text-muted key pl-3">Standard key Features</small>
-                        <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-secondary btn-block"><small>ADD TO CART</small></button></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
+    </table>
 </div>
