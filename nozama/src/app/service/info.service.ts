@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { ANALYZE_FOR_ENTRY_COMPONENTS, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Client } from '../model/client';
 
@@ -9,14 +9,29 @@ import { Client } from '../model/client';
 export class InfoService {
 
 
-  static single: InfoService;
 
   logged = false;
   client: Client;
-  adresse_serv = "http://localhost:8080/tp";
+  readonly adresse_serv = "http://localhost:8080/tp";
   constructor(private http: HttpClient, private router: Router,) { }
 
 
+ // toSession() {
+    // let txt = "{logged :" + JSON.stringify(this.logged) + "}";
+    // sessionStorage.setItem("etat_service", JSON.stringify([this.logged, this.client]))// <---
 
+
+  //}
+
+  //fromSession() {
+    /* if (sessionStorage.getItem("etat_service") != null) {
+       let j = JSON.parse(sessionStorage.getItem("etat_service"));
+       this.logged = j[0];
+       this.client = j[1];
+     } else {
+ 
+     }//*/
+
+  //}
 
 }
