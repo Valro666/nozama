@@ -12,14 +12,14 @@
                 <th><i class="fa fa-trash" aria-hidden="true"></i></th>
             </tr>
         </thead>
-        <tr  scope="row">
+        <tr  scope="row" *ngFor="let x of panier ; let i = index">
              
             <td class="tdimg">
-                <img class="" src="assets/img/tank_0.png" alt="Second slide">
+                {{x.nom}}
             </td>
 
             <td class="td">
-                Prix unité €
+                {{x.prix}}
             </td>
             <td class="tdqty justify-content-center">
                 
@@ -30,7 +30,7 @@
                 Prix total Ligne €
             </td>
             <td class="td">
-                <span class="my-5"><button type="button" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i></button></span>
+                <span class="my-5"><button type="button" class="btn btn-danger" (click)="deletearticle(i)"><i class="fa fa-trash" aria-hidden="true"></i></button></span>
             </td>
     
             
@@ -38,7 +38,7 @@
     
     
     </table>
-
+{{panier}}
 <div class="row">
     <div class="col-sm-8"></div>
     <div class="col-sm-4 text-end mb-5">
@@ -46,5 +46,7 @@
         <button class="btn btn-warning ms-5 btn-lg">Valider mon panier</button>
     </div>
 </div>
+
+<button routerLink="/article/2">test</button>
 
 </div>

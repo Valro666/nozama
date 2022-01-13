@@ -20,13 +20,19 @@ export class NavComponent implements OnInit {
   }
 
   islogged() {
-    return this.session.logged;
+    let log = JSON.parse(sessionStorage.getItem("etat_service"));
+    if (log == null) {
+      return false;
+    }
+    return log[0];
+    //return this.session.logged;
     //return false;
   }
 
   ngOnInit(): void {
     this.truc = this.truc + 1;
-    this.maj();
+    //this.maj();
+    //this.session.fromSession();
   }
   maj() {
     this.log = sessionStorage.getItem("client_logged")
@@ -39,5 +45,9 @@ export class NavComponent implements OnInit {
     } else {
       return true;
     }
+  }
+
+  clear_sessionStorage() {
+    sessionStorage.clear();
   }
 }

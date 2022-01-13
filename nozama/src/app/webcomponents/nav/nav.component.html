@@ -24,7 +24,8 @@
             <!-- Liste déroulante-->
             <!-- Button-->
             <li class="nav-item dropdown ">
-              <a id="dLabel" role="button" data-toggle="dropdown" class="nav-link dropdown-toggle active" routerLink="#">
+              <a id="dLabel" role="button" data-toggle="dropdown" class="nav-link dropdown-toggle active"
+                routerLink="#">
                 Catégorie <span class="caret"></span>
               </a>
               <!-- debut liste-->
@@ -91,13 +92,18 @@
           <!--Button connexion -->
 
           <div *ngIf="!islogged()">
-            <button  class="btn btn-outline-light" role="button" type="button"
-              routerLink="connexion">Connexion
+            <button class="btn btn-outline-light" role="button" type="button" routerLink="connexion">Connexion
 
             </button>
           </div>
-            <div *ngIf="islogged()"><button class="btn btn-outline-light" role="button" type="button" routerLink="deconnexion">Decoonnexion
-            
+          <div *ngIf="islogged()"><button class="btn btn-outline-light" role="button" type="button"
+              routerLink="deconnexion">Decoonnexion
+
+            </button></div>
+
+          <div><button class="btn btn-outline-light" role="button" type="button"
+              (click)="clear_sessionStorage()">clear_sessionStorage
+
             </button></div>
 
 

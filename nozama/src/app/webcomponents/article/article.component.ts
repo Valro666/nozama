@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from 'src/app/class/article';
 
 @Component({
@@ -10,16 +10,16 @@ import { Article } from 'src/app/class/article';
 })
 export class ArticleComponent implements OnInit {
 id:number
-article:any
+article:Article
 ;
-panier: Array<any>;
+panier: Array<Article>;
 avis:any
 newavis ={articleId:0 , auteur_id : NaN , commentaire : null , titre : null , note : NaN}
 message:string
 moyenne:any
 
   
-  constructor(private http : HttpClient, private route: ActivatedRoute) { }
+  constructor(private http : HttpClient, private route: ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params =>{
@@ -32,11 +32,18 @@ moyenne:any
     this.initCalcul();
     
   }
+
+  addpanier(){
+   this.panier = JSON.parse(sessionStorage.getItem('panier'));
+   this.panier.push(this.article);
+   sessionStorage.setItem("panier", JSON.stringify(this.panier));
+   this.router.navigate(["/", "panier"]);
+  }
   
   initarticle()
   {
 
-    this.http.get("http://localhost:8080/tp/api/article/" + this.id).subscribe(
+    this.http.get<Article>("http://localhost:8080/tp/api/article/" + this.id).subscribe(
      
       response => {
         this.article = response
@@ -122,12 +129,7 @@ moyenne:any
     return toile
   }
 
-  addpanier(){
-    this.panier = JSON.parse(sessionStorage.getItem("panier"));
-    this.panier.push(this.article);
-    sessionStorage.setItem("panier",JSON.stringify(this.panier));
-    console.log("ajouter au panier ok")
-  }
+  
 }
 
 

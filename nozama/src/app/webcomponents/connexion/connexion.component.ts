@@ -27,9 +27,11 @@ export class ConnexionComponent implements OnInit {
 
       } else {
         this.message = JSON.stringify(reponse);
-        this.session.logged = true;
-        this.session.client = reponse;
         this.router.navigate(["/", "deconnexion"]);
+        let j = JSON.stringify(["true", this.message]);
+        sessionStorage.setItem("etat_service", j)
+        //sessionStorage.setItem("etat_service", "JSON.stringify(this.session)")
+        //this.session.toSession()
       }
     }, err => {
       this.message = "erreur login/mot de passe";
