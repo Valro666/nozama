@@ -12,7 +12,7 @@ import { Article } from './class/article';
 })
 export class AppComponent implements OnInit {
 
-  
+
   panier: Array<Article> = [];
 
   activation = "active";
@@ -20,18 +20,21 @@ export class AppComponent implements OnInit {
   private info: InfoService
   ngOnInit(): void {
     //sessionStorage.clear()
-    this.createPanier();
+    if (localStorage.getItem('panier') == null) {
+      this.createPanier();
+    }
     //alert(sessionStorage.getItem("etat_service"));
     if (sessionStorage.getItem("etat_service") != null) {
       //this.info.fromSession();
       alert("recuperation !")
     }
-    
+
   }
 
   createPanier() {
 
-    if(JSON.parse(sessionStorage.getItem('panier'))!=null)
-    sessionStorage.setItem("panier", JSON.stringify(this.panier));
+
+    localStorage.setItem("panier", JSON.stringify(this.panier));
+    console
   }
 }

@@ -9,127 +9,126 @@ import { Article } from 'src/app/class/article';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
-id:number
-article:Article
-;
-panier: Array<Article>;
-avis:any
-newavis ={articleId:0 , auteur_id : NaN , commentaire : null , titre : null , note : NaN}
-message:string
-moyenne:any
+  id: number
+  article: Article
+    ;
+  panier: Array<Article>;
+  avis: any
+  newavis = { articleId: 0, auteur_id: NaN, commentaire: null, titre: null, note: NaN }
+  message: string
+  moyenne: any
 
-  
-  constructor(private http : HttpClient, private route: ActivatedRoute, private router:Router) { }
+
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params =>{
+    this.route.params.subscribe(params => {
       this.id = params['id'];
       this.newavis.articleId = params['id'];
-      
+
     });
     this.initarticle();
     this.initavis();
     this.initCalcul();
-    
+
   }
 
-  addpanier(){
-   this.panier = JSON.parse(sessionStorage.getItem('panier'));
-   this.panier.push(this.article);
-   sessionStorage.setItem("panier", JSON.stringify(this.panier));
-   this.router.navigate(["/", "panier"]);
+  addpanier() {
+    this.panier = JSON.parse(localStorage.getItem('panier'));
+    this.panier.push(this.article);
+    localStorage.setItem("panier", JSON.stringify(this.panier));
+    this.router.navigate(["/", "panier"]);
   }
-  
-  initarticle()
-  {
+
+  initarticle() {
 
     this.http.get<Article>("http://localhost:8080/tp/api/article/" + this.id).subscribe(
-     
+
       response => {
         this.article = response
       }, err => {
         console.log("ID inexistant");
-        
+
         this.message = "ID inexistant";
       }
     )
   }
 
-  initavis(){
+  initavis() {
 
     this.http.get("http://localhost:8080/tp/api/avisArticleId/" + this.id).subscribe(
-     
+
       response => {
         this.avis = response
       }, err => {
         console.log("ID inexistant");
-        
+
         this.message = "ID inexistant";
       }
     )
   }
 
-  initCalcul(){
-  
+  initCalcul() {
+
   }
 
-  addavis(){
-    
-  
+  addavis() {
+
+
     const body = JSON.stringify(this.newavis);
-    this.http.post("http://localhost:8080/tp/api/avis", body,{
-      headers : new HttpHeaders({
+    this.http.post("http://localhost:8080/tp/api/avis", body, {
+      headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
 
-      
+
 
     }).
-    subscribe(response => {
+      subscribe(response => {
 
-      console.log("crud service post OK");
-      
+        console.log("crud service post OK");
 
-    },
 
-      err => {
-        console.log("crud service post KO")
-        
-      });
+      },
+
+        err => {
+          console.log("crud service post KO")
+
+        });
 
   }
 
-  unetoile(){
+  unetoile() {
     this.newavis.note = 1;
   }
-  detoile(){
+  detoile() {
     this.newavis.note = 2;
   }
-  troitoile(){
+  troitoile() {
     this.newavis.note = 3;
   }
-  quatoile(){
+  quatoile() {
     this.newavis.note = 4;
   }
-  cintoile(){
+  cintoile() {
     this.newavis.note = 5;
   }
 
-  test(note){
+  test(note) {
 
     let toile;
-    switch(note){
+    switch (note) {
 
-      case 1: toile="★"; break;
-      case 2: toile="★★"; break;
-      case 3: toile="★★★"; break;
-      case 4: toile="★★★★"; break;
-      case 5: toile="★★★★★"; break;
+      case 1: toile = "★"; break;
+      case 2: toile = "★★"; break;
+      case 3: toile = "★★★"; break;
+      case 4: toile = "★★★★"; break;
+      case 5: toile = "★★★★★"; break;
     }
     return toile
   }
 
-  
+
 }
 
 

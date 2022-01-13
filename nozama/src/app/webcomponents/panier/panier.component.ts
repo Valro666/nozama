@@ -8,20 +8,20 @@ import { Article } from 'src/app/class/article';
   styleUrls: ['./panier.component.css']
 })
 export class PanierComponent implements OnInit {
-panier:Array<Article>
+  panier: Array<Article>
   constructor() { }
 
 
   ngOnInit(): void {
-    this.panier = JSON.parse(sessionStorage.getItem('panier'));
+    this.panier = JSON.parse(localStorage.getItem('panier'));
   }
 
-  deletearticle(x){
+  deletearticle(x) {
 
-     this.panier.splice(x,1);
-     sessionStorage.setItem("panier", JSON.stringify(this.panier));
-    
+    this.panier.splice(x, 1);
+    localStorage.setItem("panier", JSON.stringify(this.panier));
+
 
   }
-  
+
 }
