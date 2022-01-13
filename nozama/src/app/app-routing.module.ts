@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'inscription', component: InscriptionComponent },
   { path: 'panier', component: PanierComponent },
   { path: 'acceuil', component: AcceuilComponent },
-  { path: 'souscatégorie/:souscat', component: SouscategorieComponent },
+  { path: 'souscategorie/:souscat', component: SouscategorieComponent },
   { path: 'categorie/:categorie', component: CategorieComponent }
 ];
 

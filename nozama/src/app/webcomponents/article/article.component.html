@@ -6,7 +6,7 @@
 
             <!-- Carousel -->
             
-            <img class="d-block w-100" src="assets/img/{{article.img}}.png" alt="First slide">
+            <img class="d-block w-100" src="assets/img/{{article.img}}/1.png" alt="First slide">
             
               <!-- Fin carousel-->
         </div>
@@ -21,7 +21,7 @@
 <!--Module d'ajout au panier-->
         <div class="col-sm-2 border rounded-3 ">
 
-            <h3 class="text-center mt-2">{{article.prix}}€</h3>
+            <h3 class="text-center mt-2">{{article.prix| currency:'':'':'3.0-1'}}€</h3>
             <p>livré a : Cient - cp client</p>
             <hr>
             <label for="quantite" class="form-label">Quantité :</label>

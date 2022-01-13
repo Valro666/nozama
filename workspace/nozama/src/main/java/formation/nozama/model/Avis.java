@@ -18,14 +18,14 @@ public class Avis {
 	private String titre;
 	private String commentaire;
 	private int articleId;
-	private int auteurId;
+	private String auteurId;
 	@Version
 	private int version;
 	
 	public Avis() {
 	}
 
-	public Avis(int id, int note, String titre, String commentaire, int articleId, int auteurId) {
+	public Avis(int id, int note, String titre, String commentaire, int articleId, String auteurId) {
 		this.id = id;
 		this.note = note;
 		this.titre = titre;
@@ -88,11 +88,11 @@ public class Avis {
 		this.articleId = articleId;
 	}
 
-	public int getAuteurId() {
+	public String getAuteurId() {
 		return auteurId;
 	}
 
-	public void setAuteurId(int auteurId) {
+	public void setAuteurId(String auteurId) {
 		this.auteurId = auteurId;
 	}
 	
