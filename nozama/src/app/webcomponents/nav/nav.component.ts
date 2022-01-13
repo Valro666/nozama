@@ -34,18 +34,7 @@ export class NavComponent implements OnInit {
     //this.maj();
     //this.session.fromSession();
   }
-  maj() {
-    this.log = sessionStorage.getItem("client_logged")
-    this.log2 = sessionStorage.getItem("client_stringifier")
-  }
-  test() {
-    let str = sessionStorage.getItem("client_logged");
-    if (str === "false") {
-      return false;
-    } else {
-      return true;
-    }
-  }
+
 
   clear_sessionStorage() {
     sessionStorage.clear();

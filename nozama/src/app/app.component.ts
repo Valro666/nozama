@@ -37,4 +37,16 @@ export class AppComponent implements OnInit {
     localStorage.setItem("panier", JSON.stringify(this.panier));
     console
   }
+
+  truc() {
+    localStorage.setItem("tarte", "tarte")
+  }
+
+  gettarte() {
+    return localStorage.getItem("tarte") + " <------";
+  }
+
+  clear(){
+    localStorage.clear();
+  }
 }

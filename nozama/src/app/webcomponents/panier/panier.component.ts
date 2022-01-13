@@ -39,6 +39,14 @@ export class PanierComponent implements OnInit {
     return x.prixtotal
   }
 
+  prixPanier(){
+    let sum = 0;
+    this.panier.forEach(element => {
+      sum += (element.prix*element.quantite)
+    });
+    return sum;
+  }
+
  
 
  
