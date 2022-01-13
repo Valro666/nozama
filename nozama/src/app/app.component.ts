@@ -17,7 +17,8 @@ export class AppComponent implements OnInit {
 
   activation = "active";
   title = 'nozama';
-  private info: InfoService
+  //private info: InfoService
+  constructor(private info: InfoService) { }
   ngOnInit(): void {
     //sessionStorage.clear()
     if (localStorage.getItem('panier') == null) {
@@ -29,8 +30,13 @@ export class AppComponent implements OnInit {
       alert("recuperation !")
     }
 
+
+
   }
 
+  err() {
+    return localStorage.getItem("debug")
+  }
   createPanier() {
 
 
@@ -46,7 +52,7 @@ export class AppComponent implements OnInit {
     return localStorage.getItem("tarte") + " <------";
   }
 
-  clear(){
+  clear() {
     localStorage.clear();
   }
 }

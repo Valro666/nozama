@@ -87,9 +87,15 @@
 
         </button>
       </div>
+      <!--Button deconnexion -->
       <div *ngIf="islogged()">
         <div>Bonjour {{bonjour()}} !</div>
         <button class="btn btn-outline-light" role="button" type="button" routerLink="deconnexion">Deconnexion
+        </button>
+      </div>
+      <!--Button profil -->
+      <div *ngIf="islogged()">
+        <button class="btn btn-outline-light" role="button" type="button" routerLink="profil">profil
         </button>
       </div>
 

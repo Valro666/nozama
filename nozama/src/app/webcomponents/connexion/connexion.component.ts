@@ -16,6 +16,7 @@ export class ConnexionComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router, private session: InfoService) { }
 
   ngOnInit(): void {
+    this.brutal()
   }
 
   tentative() {
@@ -41,7 +42,12 @@ export class ConnexionComponent implements OnInit {
   }
 
   brutal() {
-    return (this.info.login == "" || this.info.pass == "")
+    let l = !(this.info.login == "");
+    let p = !(this.info.pass == "");
+    let lp = !(l&&p);
+    this.session.debugerr(l+" & "+p+" = "+lp)
+
+    return lp
   }
 
   error() {

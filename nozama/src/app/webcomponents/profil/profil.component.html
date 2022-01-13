@@ -1,3 +1,4 @@
+<p>profil works!</p>
 <section>
 
     <div class="container-fluid h-custom">
@@ -8,23 +9,21 @@
                 <!-- login input -->
                 <div class="form-outline mb-4">
                     <input type="text" id="form3Example3" class="form-control form-control-lg" placeholder="login "
-                        [(ngModel)]="data.login"(input)="brutalCheck()" />
-                    <label class="form-label" for="form3Example3">login </label>
-                    <p class="err" *ngIf="vide(data.login)">Champ vide</p>
-                    <p class="err" *ngIf="autrelog()">Login deja pris</p>
+                        [(ngModel)]="data.login" disabled="true" (input)="brutalCheck()"/>
+                    <label class="form-label" for="form3Example3">login non alterable</label>
                 </div>
                 <!-- Password input -->
                 <div class="form-outline mb-3">
                     <input type="password" id="form3Example4" class="form-control form-control-lg"
-                        placeholder="mot de passe" [(ngModel)]="data.pass"(input)="brutalCheck()" />
-                    <label class="form-label" for="form3Example4">mot de passe</label>
+                        placeholder="mot de passe" [(ngModel)]="data.pass" (input)="brutalCheck()" />
+                    <label class="form-label" for="form3Example4" >nouveau mot de passe</label>
                     <p class="err" *ngIf="vide(data.pass)">Champ vide</p>
                 </div>
                 <div class="form-outline mb-3">
                     <input type="password" id="form3Example4" class="form-control form-control-lg"
-                        placeholder="mot de passe" [(ngModel)]="confirme"(input)="brutalCheck()" />
-                    <label class="form-label" for="form3Example4">confirmer mot de passe</label>
-                    <p class="err" *ngIf="vide(confirme)">Champ vide</p>
+                        placeholder="mot de passe" [(ngModel)]="confirme" (input)="brutalCheck()" />
+                    <label class="form-label" for="form3Example4">repeter nouveau mot de passe</label>
+                    <p class="err" *ngIf="vide(data.pass)">Champ vide</p>
                 </div>
                 <!-- email input -->
                 <div class="form-outline mb-4">
@@ -50,8 +49,8 @@
                 <!-- button input -->
                 <div class="text-center text-lg-start mt-4 pt-2">
                     <button type="button" class="btn btn-primary btn-lg"
-                        style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="tentative()"
-                        [disabled]="brutal">Inscription</button>
+                        style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="updateClient()"
+                        [disabled]="brutal">mise a jour profil</button>
 
                     <!-- deja compe -->
                     <p class="small fw-bold mt-2 pt-1 mb-0">Deja un compte ? <a routerLink="/connexion"

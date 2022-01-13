@@ -18,6 +18,7 @@ import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
 import { InfoService } from './service/info.service';
 import { SouscategorieComponent } from './webcomponents/souscategorie/souscategorie.component';
 import { CategorieComponent } from './webcomponents/categorie/categorie.component';
+import { ProfilComponent } from './webcomponents/profil/profil.component';
 
 
 
@@ -37,6 +38,7 @@ import { CategorieComponent } from './webcomponents/categorie/categorie.componen
     AcceuilComponent,
     SouscategorieComponent,
     CategorieComponent,
+    ProfilComponent,
     //InfoService
 
 

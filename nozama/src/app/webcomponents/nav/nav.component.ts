@@ -33,6 +33,7 @@ export class NavComponent implements OnInit {
     this.truc = this.truc + 1;
     //this.maj();
     //this.session.fromSession();
+    //this.session.getAllCateSous();
   }
   bonjour() {
     return JSON.parse(localStorage.getItem("infoclient")).nom

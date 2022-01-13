@@ -60,16 +60,16 @@ public class CompteClientRestController {
 
 	@CrossOrigin
 	@PutMapping
-	public String update(@RequestBody CompteClient personne) {
+	public void update(@RequestBody CompteClient personne) {
 		if (!this.repository.existsById(personne.getLogin())) {
 			// this.repository.save(personne);
-			return "Compte inconnu update";
+			//return "Compte inconnu update";
 		} else {
 			Optional<CompteClient> o = this.repository.findById(personne.getLogin());
 			CompteClient p = o.get();
 			p.update(personne);
 			this.repository.save(p);
-			return "compte updated";
+			//return "compte updated";
 		}
 	}
 

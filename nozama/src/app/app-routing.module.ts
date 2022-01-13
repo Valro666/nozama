@@ -9,6 +9,7 @@ import { PanierComponent } from './webcomponents/panier/panier.component';
 import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
 import { SouscategorieComponent } from './webcomponents/souscategorie/souscategorie.component';
 import { CategorieComponent } from './webcomponents/categorie/categorie.component';
+import { ProfilComponent } from './webcomponents/profil/profil.component';
 
 const routes: Routes = [
   { path: 'article/:id', component: ArticleComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'panier', component: PanierComponent },
   { path: 'acceuil', component: AcceuilComponent },
   { path: 'souscategorie/:souscat', component: SouscategorieComponent },
-  { path: 'categorie/:categorie', component: CategorieComponent }
+  { path: 'categorie/:categorie', component: CategorieComponent },
+  { path: 'profil', component: ProfilComponent }
 ];
 
 @NgModule({

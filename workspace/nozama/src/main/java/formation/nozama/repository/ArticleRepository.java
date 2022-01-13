@@ -9,11 +9,15 @@ import formation.nozama.model.Article;
 
 public interface ArticleRepository extends JpaRepository<Article, Integer> {
 	List<Article> findByNomContaining(String nom);
+
 	List<Article> findByCategorieContaining(String categorie);
+
 	List<Article> findBySousCategorieContaining(String SousCategorie);
+
 	List<Article> findByFabricantContaining(String Fabricant);
+
 	List<Article> findByPrix(int prix);
 
-	//@Query("SELECT DISTINCT categorie FROM article")
-	//List<Object> findDistinctStates();
+
+
 }

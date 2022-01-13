@@ -12,11 +12,13 @@ export class InscriptionComponent implements OnInit {
   ckeckEntry = "";
   //  data: Client;
   data = { login: "", mail: "", pass: "", nom: "", prenom: "" };
-
+  confirme = "";
+  brutal = false;
   reussite = false;
   constructor(private info: InfoService) { }
 
   ngOnInit(): void {
+    this.brutalCheck();
   }
 
   tentative() {
@@ -24,7 +26,20 @@ export class InscriptionComponent implements OnInit {
   }
 
   brutalCheck() {
-    return this.vide(this.data.login) || this.vide(this.data.pass) || this.vide(this.data.mail) || this.vide(this.data.nom) || this.vide(this.data.prenom)
+      let l = !this.vide(this.data.login);
+      let p = !this.vide(this.data.pass);
+      let m = !this.vide(this.data.mail);
+      let n = !this.vide(this.data.nom);
+      let pr = !this.vide(this.data.prenom);
+      let c = !this.vide(this.confirme);
+      let vide = (l && p && m && n && pr && c);
+
+      let mdp = (this.data.pass == this.confirme)
+      let res = vide && mdp;
+      this.info.debugerr(l + " " + p + " " + m + " " + n + " " + pr + " " + c + " = " + vide + " & " + mdp + " = " + res + JSON.stringify(this.data) + " " + this.confirme)
+      this.brutal = !res;
+      //return vide;
+    
   }
 
   vide(txt) {
