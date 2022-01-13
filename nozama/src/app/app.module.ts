@@ -15,6 +15,7 @@ import { ConfigCompteComponent } from './webcomponents/config-compte/config-comp
 import { FormsModule } from '@angular/forms';
 import { PanierComponent } from './webcomponents/panier/panier.component';
 import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
+import { InfoService } from './service/info.service';
 
 
 
@@ -32,6 +33,7 @@ import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
     ConfigCompteComponent,
     PanierComponent,
     AcceuilComponent,
+    //InfoService
 
 
 
@@ -43,7 +45,7 @@ import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
     FormsModule
     //NgModule
   ],
-  providers: [],
+  providers: [InfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
