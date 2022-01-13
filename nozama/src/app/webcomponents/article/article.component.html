@@ -31,7 +31,7 @@
         </div>
         <div class="col-sm-4">
             <h1> {{article.nom}}</h1>
-            <p>{{id}}/5</p>
+            <p>/5</p>
             <hr>
 
             <!-- Ligne 2 : Description-->
@@ -47,7 +47,7 @@
             <div class="text-center">
                 <input type="number" id="quantite" class="form-control " value="1">
                 <div class="d-grid">
-                    <button type="button" class="btn btn-warning mt-2">Ajouter au panier</button>
+                    <button type="button" class="btn btn-warning mt-2" (click)="addpanier()">Ajouter au panier</button>
                     <button type="button" class="btn btnpanier mt-2">Acheter ce produit</button>
                 </div>
             </div>
@@ -65,7 +65,7 @@
 <!-- Avis unité (a généré) -->
         <div class="row mt-3" *ngFor="let x of avis ; let i = index">
             <h4>{{x.titre}}</h4>
-            <div class="col-sm-4">Note {{x.note}}/5</div>
+            <div class="col-sm-4 text-warning note" ><strong>{{test(x.note)}}</strong></div>
             <div class="col-sm-8 mb-3">
                 <p>{{x.commentaire}}</p>
             </div>
@@ -94,11 +94,11 @@
     
   <span class="rating">
     
-    <button type="button" class="btn"  title="5 etoiles" (click)="cintoile()">☆</button>
-    <button type="button" class="btn" title="4 etoiles" (click)="quatoile()">☆</button>
-    <button type="button" class="btn" title="3 etoiles" (click)="troitoile()">☆</button>
-    <button type="button" class="btn" title="2 etoiles" (click)="detoile()">☆</button>
-    <button type="button" class="btn" title="1 etoiles" (click)="unetoile()">☆</button>
+    <button type="button" class="btn"  title="5 etoiles" (click)="cintoile()">★</button>
+    <button type="button" class="btn" title="4 etoiles" (click)="quatoile()">★</button>
+    <button type="button" class="btn" title="3 etoiles" (click)="troitoile()">★</button>
+    <button type="button" class="btn" title="2 etoiles" (click)="detoile()">★</button>
+    <button type="button" class="btn" title="1 etoiles" (click)="unetoile()">★</button>
   </span>
   </div>
   <div class="col-sm-8 align-self-center">

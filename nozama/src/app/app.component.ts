@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from './class/article';
 
 
 
@@ -10,15 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   
-  panier:any;
+  
   activation ="active";
   title = 'nozama';
+  
   ngOnInit(): void {
     this.createPanier();
   }
 
   createPanier(){
 
-    sessionStorage.setItem("panier",this.panier);
+
   }
 }

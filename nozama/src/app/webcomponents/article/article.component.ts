@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { Article } from 'src/app/class/article';
 
 @Component({
   selector: 'app-article',
@@ -10,10 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 export class ArticleComponent implements OnInit {
 id:number
 article:any
+;
+panier: Array<any>;
 avis:any
 newavis ={articleId:0 , auteur_id : NaN , commentaire : null , titre : null , note : NaN}
 message:string
 moyenne:any
+
   
   constructor(private http : HttpClient, private route: ActivatedRoute) { }
 
@@ -102,6 +106,27 @@ moyenne:any
   }
   cintoile(){
     this.newavis.note = 5;
+  }
+
+  test(note){
+
+    let toile;
+    switch(note){
+
+      case 1: toile="★"; break;
+      case 2: toile="★★"; break;
+      case 3: toile="★★★"; break;
+      case 4: toile="★★★★"; break;
+      case 5: toile="★★★★★"; break;
+    }
+    return toile
+  }
+
+  addpanier(){
+    this.panier = JSON.parse(sessionStorage.getItem("panier"));
+    this.panier.push(this.article);
+    sessionStorage.setItem("panier",JSON.stringify(this.panier));
+    console.log("ajouter au panier ok")
   }
 }
 
