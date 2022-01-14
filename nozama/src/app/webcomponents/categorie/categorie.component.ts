@@ -9,52 +9,51 @@ import { Article } from 'src/app/class/article';
   styleUrls: ['./categorie.component.css']
 })
 export class CategorieComponent implements OnInit {
-  categorie:string
-  nbAritcles:number
-  article:Article
-  tabArticles:any
-    
-    constructor(private http : HttpClient, private route: ActivatedRoute, private router : Router ) { }
-  
-    ngOnInit(): void {
-    
+  categorie: string
+  nbAritcles: number
+  article: Article
+  tabArticles: any
 
-      this.route.params.subscribe(params => {
-        this.categorie = params['categorie'];
-        
-  
-      });
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
-      this.http.get<Article>("http://localhost:8080/tp/api/articleCatCon/"+this.categorie).subscribe(
-        response => {
-          this.tabArticles= response;
-          
-        },
-        err => {
-          console.log("**********KO")
-        }
-      );
+  ngOnInit(): void {
+    this.init()
+  };
+  ngOnChanges() {
+    this.init();
+  }
+  init() {
+    this.route.params.subscribe(params => {
+      this.categorie = params['categorie'];
+    });
 
-      
-    };
-  
-    buildArr(theArr: Article[]): Article[][]{
-  
-      var arrOfarr = [];
-      for(var i = 0; i < theArr.length ; i+=5) {
-          var row = [];
-  
-          for(var x = 0; x < 5; x++) {
-            var value = theArr[i + x];
-              if (!value) {
-                  break;
-              }
-              row.push(value);
-          }
-          arrOfarr.push(row);
+    this.http.get<Article>("http://localhost:8080/tp/api/articleCatCon/" + this.categorie).subscribe(
+      response => {
+        this.tabArticles = response;
+      },
+      err => {
+        console.log("**********KO")
       }
-       return arrOfarr;
-    }
+    );
+  }
 
-    
+  buildArr(theArr: Article[]): Article[][] {
+
+    var arrOfarr = [];
+    for (var i = 0; i < theArr.length; i += 5) {
+      var row = [];
+
+      for (var x = 0; x < 5; x++) {
+        var value = theArr[i + x];
+        if (!value) {
+          break;
+        }
+        row.push(value);
+      }
+      arrOfarr.push(row);
+    }
+    return arrOfarr;
+  }
+
+
 }

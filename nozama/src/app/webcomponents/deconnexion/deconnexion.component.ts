@@ -21,7 +21,8 @@ export class DeconnexionComponent implements OnInit {
     //sessionStorage.setItem("client_stringifier", "");
     this.info.client = null;
     this.info.logged = false;
-    this.router.navigate(["/", "connexion"]);
-    localStorage.setItem("etat_service", null);
+    this.router.navigate(["/"]);
+//    localStorage.setItem("etat_service", null);
+    localStorage.clear();
   }
 }

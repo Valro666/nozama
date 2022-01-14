@@ -54,7 +54,8 @@ export class NavComponent implements OnInit {
   }
 
   refresh(cat){
-    this.router.navigate(["/categorie/"+cat]);
-    window.location.reload()
+    this.router.navigate(["/acceuil"]);
+    this.router.navigate(["/categorie/" + cat]);
+    //window.location.reload()
   }
 }

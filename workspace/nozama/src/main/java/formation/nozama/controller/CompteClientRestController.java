@@ -83,7 +83,7 @@ public class CompteClientRestController {
 		if (!this.repository.existsById(personne.getLogin())) {
 			// this.repository.save(personne);
 			// return "Compte inconnu update";
-			new ErrorCompteClientController("le compte n existe pas-update");
+			//new ErrorCompteClientController("le compte n existe pas-update");
 		} else {
 			Optional<CompteClient> o = this.repository.findById(personne.getLogin());
 			CompteClient p = o.get();
@@ -99,7 +99,7 @@ public class CompteClientRestController {
 		System.out.println("truc");
 		if (!this.repository.existsById(personne.getLogin())) {
 			//return "Compte inconnu suppression";
-			new ErrorCompteClientController("le compte n existe pas-delete");
+			//new ErrorCompteClientController("le compte n existe pas-delete");
 		} else {
 			Optional<CompteClient> o = this.repository.findById(personne.getLogin());
 			CompteClient p = o.get();

@@ -73,19 +73,20 @@ public class PanierRestController {
 	}
 	@CrossOrigin
 	@PostMapping("test")
-	public void create2(@RequestBody Panier panier) {
-		// System.out.println("coucou");
+	public void create2() {
+		System.out.println("coucou");
 
 		Optional<CompteClient> solo = cc_repo.findById("solo");
 		System.out.println(solo);
 		Panier p = new Panier();
-		Optional<Article> art = article_repo.findById(0);
-		Ligne ligne = new Ligne(art.get(), 12);
+		Optional<Article> art = article_repo.findById(1);
+		Ligne ligne = new Ligne(article_repo.findById(1).get(), 12);
+		Ligne ligne2 = new Ligne(article_repo.findById(2).get(), 12);
 		java.util.Date date = Single.getInstance().getDate();
 		p.setDate(date);
 		p.add(ligne);
+		p.add(ligne2);
 		p.setClient(solo.get());//
-
 		//System.out.println(panier);
 		panier_repo.save(p);
 	}

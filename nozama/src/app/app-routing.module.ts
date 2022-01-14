@@ -10,6 +10,7 @@ import { AcceuilComponent } from './webcomponents/acceuil/acceuil.component';
 import { SouscategorieComponent } from './webcomponents/souscategorie/souscategorie.component';
 import { CategorieComponent } from './webcomponents/categorie/categorie.component';
 import { ProfilComponent } from './webcomponents/profil/profil.component';
+import { ConInsComponent } from './webcomponents/con-ins/con-ins.component';
 
 const routes: Routes = [
   { path: 'article/:id', component: ArticleComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'acceuil', component: AcceuilComponent },
   { path: 'souscategorie/:souscat', component: SouscategorieComponent },
   { path: 'categorie/:categorie', component: CategorieComponent },
-  { path: 'profil', component: ProfilComponent }
+  { path: 'profil', component: ProfilComponent },
+  { path: 'con-ins', component: ConInsComponent }
 ];
 
 @NgModule({

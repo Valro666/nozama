@@ -1,0 +1,14 @@
+<p>con-ins works!</p>
+
+
+<div class="row">
+    <button type="button" class="btn btn-primary" (click)="choix('log')">connexion</button>
+    <button type="button" class="btn btn-primary" (click)="choix('ins')">inscription</button>
+</div>
+<div *ngIf="selector == 'log'">
+    <app-connexion></app-connexion>
+</div>
+<div *ngIf="selector == 'ins'">
+    <app-inscription></app-inscription>
+    poils
+</div>

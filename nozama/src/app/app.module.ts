@@ -19,6 +19,8 @@ import { InfoService } from './service/info.service';
 import { SouscategorieComponent } from './webcomponents/souscategorie/souscategorie.component';
 import { CategorieComponent } from './webcomponents/categorie/categorie.component';
 import { ProfilComponent } from './webcomponents/profil/profil.component';
+import { VerouComponent } from './webcomponents/verou/verou.component';
+import { ConInsComponent } from './webcomponents/con-ins/con-ins.component';
 
 
 
@@ -39,6 +41,8 @@ import { ProfilComponent } from './webcomponents/profil/profil.component';
     SouscategorieComponent,
     CategorieComponent,
     ProfilComponent,
+    VerouComponent,
+    ConInsComponent,
     //InfoService
 
 

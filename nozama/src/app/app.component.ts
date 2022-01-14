@@ -17,20 +17,25 @@ export class AppComponent implements OnInit {
 
   activation = "active";
   title = 'nozama';
-  //private info: InfoService
   ngOnInit(): void {
-    //sessionStorage.clear()
     if (localStorage.getItem('panier') == null) {
       this.createPanier();
     }
-    //alert(sessionStorage.getItem("etat_service"));
     if (sessionStorage.getItem("etat_service") != null) {
-      //this.info.fromSession();
       alert("recuperation !")
     }
+    this.verou();
 
 
+  }
 
+  verou() {
+   // let b = JSON.parse(localStorage.getItem("etat_service"))[0]
+   // alert(b)
+    if (localStorage.getItem("etat_service") == null) {
+      return true;
+    }
+    return false;
   }
 
   err() {

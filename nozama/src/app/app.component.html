@@ -1,9 +1,20 @@
-
 <app-nav></app-nav>
 
 {{err()}}
-<div class="page">
-<router-outlet></router-outlet>
-</div>
-<app-footer></app-footer>
 
+<div *ngIf="verou()">
+    verou
+    <div class="page">
+        <app-con-ins></app-con-ins>
+    </div>
+</div>
+
+<div *ngIf="!verou()">
+    ouvert
+    <div class="page">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

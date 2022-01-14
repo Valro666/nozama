@@ -109,7 +109,7 @@ export class InfoService {
         localStorage.setItem("error_inscription", "echec")
       })
   }
-  inscription3(json) {
+  private inscription3(json) {
 
     this.http.get<Client>(this.adresse_serv + "client/" + json.login).subscribe(
       rep => {
