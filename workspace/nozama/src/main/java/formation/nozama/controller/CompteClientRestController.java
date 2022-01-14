@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,7 +16,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
+import formation.nozama.Error.ErrorCompteClientController;
 import formation.nozama.model.CompteClient;
 import formation.nozama.repository.CompteClientRepository;
 
@@ -35,21 +39,36 @@ public class CompteClientRestController {
 	@CrossOrigin
 	@GetMapping("{login}")
 	public CompteClient getOne(@PathVariable(name = "login") String id) {
-		return this.repository.findById(id).get();
-		/*
-		 * if (!this.repository.existsById(id)) { // this.repository.save(personne); //
-		 * return "Compte inconnu "; return null; } else { Optional<CompteClient> o =
-		 * this.repository.findById(id); CompteClient p = o.get(); return p;
-		 * 
-		 * }
-		 */
+		// return this.repository.findById(id).get();
+
+		if (this.repository.existsById(id)) { // this.repository.save(personne); //
+			//return "Compte inconnu ";
+			return null;
+		} else {
+			Optional<CompteClient> o = this.repository.findById(id);
+
+			CompteClient p = o.get();
+			return p; 
+
+		}
 
 	}
 
 	@CrossOrigin
 	@PostMapping
 	public void create(@RequestBody CompteClient personne) {
-		this.repository.save(personne);
+		// this.repository.save(personne);
+
+		if (!this.repository.existsById(personne.getLogin())) {
+			this.repository.save(personne);
+			// return "Compte create";
+		} else {
+			//System.out.println("poule");
+			//new DataAccessException("eror create") {};
+			//new ErrorCompteClientController();
+			//HttpStatus hs = new HttpStatus();
+			throw new ResponseStatusException(HttpStatus.FOUND, "Le compte existe deja");
+		}
 
 		/*
 		 * if (!this.repository.existsById(personne.getLogin())) {
@@ -63,27 +82,29 @@ public class CompteClientRestController {
 	public void update(@RequestBody CompteClient personne) {
 		if (!this.repository.existsById(personne.getLogin())) {
 			// this.repository.save(personne);
-			//return "Compte inconnu update";
+			// return "Compte inconnu update";
+			new ErrorCompteClientController("le compte n existe pas-update");
 		} else {
 			Optional<CompteClient> o = this.repository.findById(personne.getLogin());
 			CompteClient p = o.get();
 			p.update(personne);
 			this.repository.save(p);
-			//return "compte updated";
+			// return "compte updated";
 		}
 	}
 
 	@CrossOrigin
 	@DeleteMapping
-	public String delete(@RequestBody CompteClient personne) {
+	public void delete(@RequestBody CompteClient personne) {
 		System.out.println("truc");
 		if (!this.repository.existsById(personne.getLogin())) {
-			return "Compte inconnu suppression";
+			//return "Compte inconnu suppression";
+			new ErrorCompteClientController("le compte n existe pas-delete");
 		} else {
 			Optional<CompteClient> o = this.repository.findById(personne.getLogin());
 			CompteClient p = o.get();
 			this.repository.delete(o.get());
-			return "compte supp";
+			//return "compte supp";
 		}
 	}
 

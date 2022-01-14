@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { stringify } from 'querystring';
 import { tap } from 'rxjs';
 import { Article } from '../class/article';
 import { Catesous } from '../model/catesous';
@@ -49,7 +50,7 @@ export class InfoService {
         let txt = "";
         let cate: Array<string> = [];
         let sous: Array<string> = [];
-        let catesous: Catesous[]=[];
+        let catesous: Catesous[] = [];
         // recherche des categorie
         for (let index = 0; index < arr.length; index++) {
           let element: Article = arr[index];
@@ -73,7 +74,7 @@ export class InfoService {
           //txt += " " + JSON.stringify(tmp);
           catesous.push(tmp)
         }
-        localStorage.setItem("catesous",JSON.stringify(catesous))
+        localStorage.setItem("catesous", JSON.stringify(catesous))
         //this.debugerr(JSON.stringify(catesous) + " " + txt)
       }, err => {
         //this.debugerr("error " + JSON.stringify(err))
@@ -82,9 +83,9 @@ export class InfoService {
   }
 
   debugerr(txt) {
-    localStorage.setItem("debug", txt)
+    localStorage.setItem("debug", JSON.stringify(txt))
   }
-  private inscription2(json) {
+  inscription(json) {
 
     const body = JSON.stringify(json);
     this.http.post(this.adresse_serv + "client/", body, {
@@ -94,17 +95,21 @@ export class InfoService {
       })
     }).subscribe(
       reponse => {
+        //this.debugerr("rep "+reponse)
         //alert("victoire " + JSON.stringify(reponse))
         localStorage.setItem("error_inscription", "win")
         this.router.navigate(["/", "connexion"]);
       },
       err => {
-        let tr = JSON.stringify(err)
-
+        //let tr = JSON.stringify(err)
+        let ify = JSON.stringify(err);
+        //let json = JSON.parse(err)
+        let tmp =JSON.stringify(err.error.error);
+        //this.debugerr(tmp+"<------->"+ify)
         localStorage.setItem("error_inscription", "echec")
       })
   }
-  inscription(json) {
+  inscription3(json) {
 
     this.http.get<Client>(this.adresse_serv + "client/" + json.login).subscribe(
       rep => {
@@ -112,7 +117,7 @@ export class InfoService {
         localStorage.setItem("error_inscription", "echec")
       },
       err => {
-        this.inscription2(json);
+        this.inscription(json);
       }
     );
 
