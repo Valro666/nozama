@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   activation = "active";
   title = 'nozama';
   //private info: InfoService
-  constructor(private info: InfoService) { }
   ngOnInit(): void {
     //sessionStorage.clear()
     if (localStorage.getItem('panier') == null) {

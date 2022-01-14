@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ANALYZE_FOR_ENTRY_COMPONENTS, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { tap } from 'rxjs';
+import { Article } from '../class/article';
 import { Catesous } from '../model/catesous';
 import { Client } from '../model/client';
 
@@ -9,7 +11,7 @@ import { Client } from '../model/client';
 })
 export class InfoService {
 
-
+  truc: Catesous[];
 
   logged = false;
   client: Client;
@@ -41,12 +43,39 @@ export class InfoService {
   }
 
   getAllCateSous() {
-    this.http.get("http://localhost:8080/tp/api/article/catesous").subscribe(
+    this.http.get<Article>("http://localhost:8080/tp/api/article/").subscribe(
       rep => {
-        //alert(rep)
-        this.debugerr("win " + JSON.stringify(rep))
+        let arr: [] = JSON.parse(JSON.stringify(rep));
+        let txt = "";
+        let cate: Array<string> = [];
+        let sous: Array<string> = [];
+        let catesous: Catesous[]=[];
+        // recherche des categorie
+        for (let index = 0; index < arr.length; index++) {
+          let element: Article = arr[index];
+          if (!cate.includes(element.categorie, 0)) {
+            cate.push(element.categorie)
+          }
+        }
+        // recherche et lien entre categorie et sous categorie
+        for (let index = 0; index < cate.length; index++) {
+          let element2: string = cate[index];
+          let tmp = new Catesous(element2, []);
+          for (let index = 0; index < arr.length; index++) {
+            let element3: Article = arr[index];
+            if (element3.categorie == element2) {
+              if (!tmp.sous.includes(element3.sousCategorie, 0)) {
+                sous.push(element3.sousCategorie)
+                tmp.sous.push(element3.sousCategorie)
+              }
+            }
+          }
+          //txt += " " + JSON.stringify(tmp);
+          catesous.push(tmp)
+        }
+        localStorage.setItem("catesous",JSON.stringify(catesous))
+        //this.debugerr(JSON.stringify(catesous) + " " + txt)
       }, err => {
-        //alert()
         this.debugerr("error " + JSON.stringify(err))
       }
     );
@@ -94,7 +123,7 @@ export class InfoService {
     return localStorage.getItem("infoclient")
   }
   toinfoclient(json) {
-    return localStorage.setItem("infoclient",JSON.stringify(json))
+    return localStorage.setItem("infoclient", JSON.stringify(json))
   }
 
 

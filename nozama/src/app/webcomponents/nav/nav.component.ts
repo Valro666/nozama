@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Catesous } from 'src/app/model/catesous';
 import { InfoService } from 'src/app/service/info.service';
 
 
@@ -33,7 +34,7 @@ export class NavComponent implements OnInit {
     this.truc = this.truc + 1;
     //this.maj();
     //this.session.fromSession();
-    //this.session.getAllCateSous();
+    this.session.getAllCateSous();
   }
   bonjour() {
     return JSON.parse(localStorage.getItem("infoclient")).nom
@@ -41,5 +42,13 @@ export class NavComponent implements OnInit {
 
   clear_sessionStorage() {
     localStorage.clear();
+  }
+
+  categorie() {
+    let c = localStorage.getItem("catesous");
+    let cc = <any>{};
+    cc  = JSON.parse(c);
+    this.session.debugerr(cc[1].sous)
+    return cc;
   }
 }

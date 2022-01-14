@@ -9,9 +9,21 @@
         <li class="nav-item">
           <a class="nav-link active" routerLink="acceuil">Accueil</a>
         </li>
-        <!-- Liste déroulante 2-->
-
-
+        <!-- Liste déroulante automatique mwahahaha-->
+        <li class="nav-item dropdown ">
+          <a id="dLabel" role="button" data-toggle="dropdown" class="nav-link dropdown-toggle active" routerLink="#">
+            Catégorie <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+            <!-- je pompe moins de ligne que toi =D -->
+            <li class="dropdown-submenu"*ngFor="let a of categorie()">
+              <a class="dropdown-item" >{{a.categorie}}</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#"*ngFor="let b of a.sous">{{b}}</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
 
         <!-- Liste déroulante-->
         <!-- Button-->
