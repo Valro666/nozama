@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { Catesous } from 'src/app/model/catesous';
 import { InfoService } from 'src/app/service/info.service';
 
@@ -16,7 +17,7 @@ export class NavComponent implements OnInit {
 
   @Input() poule = "";
 
-  constructor(private session: InfoService) {
+  constructor(private session: InfoService, private router: Router) {
 
   }
 
@@ -50,5 +51,10 @@ export class NavComponent implements OnInit {
     cc  = JSON.parse(c);
     //this.session.debugerr(cc[1].sous)
     return cc;
+  }
+
+  refresh(cat){
+    this.router.navigate(["/categorie/"+cat]);
+    window.location.reload()
   }
 }

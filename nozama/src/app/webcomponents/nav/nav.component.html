@@ -15,9 +15,9 @@
             Catégorie <span class="caret"></span>
           </a>
           <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-            <!-- je pompe moins de ligne que toi =D -->
+            <!-- je pompe moins de ligne que toi =D /categorie/{{a.categorie}} -->
             <li class="dropdown-submenu"*ngFor="let a of categorie()">
-              <a class="dropdown-item" >{{a.categorie}}</a>
+              <a class="dropdown-item" (click)="refresh(a.categorie)">{{a.categorie}}</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" routerLink="acceuil" *ngFor="let b of a.sous">{{b}}</a></li>
               </ul>

@@ -17,6 +17,7 @@ export class CategorieComponent implements OnInit {
     constructor(private http : HttpClient, private route: ActivatedRoute, private router : Router ) { }
   
     ngOnInit(): void {
+    
 
       this.route.params.subscribe(params => {
         this.categorie = params['categorie'];
@@ -33,6 +34,8 @@ export class CategorieComponent implements OnInit {
           console.log("**********KO")
         }
       );
+
+      
     };
   
     buildArr(theArr: Article[]): Article[][]{
@@ -52,4 +55,6 @@ export class CategorieComponent implements OnInit {
       }
        return arrOfarr;
     }
+
+    
 }
