@@ -32,12 +32,12 @@ export class InfoService {
       reponse => {
         //alert("victoire " + JSON.stringify(reponse))
         //localStorage.setItem("error_inscription", "win")
-        this.debugerr("victoire")
+        //this.debugerr("victoire")
         //this.router.navigate(["/", "connexion"]);
       },
       err => {
         let tr = JSON.stringify(err)
-        this.debugerr("error update")
+        //this.debugerr("error update")
         //localStorage.setItem("error_inscription", "echec")
       })
   }
@@ -76,7 +76,7 @@ export class InfoService {
         localStorage.setItem("catesous",JSON.stringify(catesous))
         //this.debugerr(JSON.stringify(catesous) + " " + txt)
       }, err => {
-        this.debugerr("error " + JSON.stringify(err))
+        //this.debugerr("error " + JSON.stringify(err))
       }
     );
   }
@@ -108,7 +108,7 @@ export class InfoService {
 
     this.http.get<Client>(this.adresse_serv + "client/" + json.login).subscribe(
       rep => {
-        this.debugerr(JSON.stringify(rep) + " " + json.login)
+        //this.debugerr(JSON.stringify(rep) + " " + json.login)
         localStorage.setItem("error_inscription", "echec")
       },
       err => {

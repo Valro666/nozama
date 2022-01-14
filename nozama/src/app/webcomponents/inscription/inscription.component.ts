@@ -36,7 +36,7 @@ export class InscriptionComponent implements OnInit {
 
       let mdp = (this.data.pass == this.confirme)
       let res = vide && mdp;
-      this.info.debugerr(l + " " + p + " " + m + " " + n + " " + pr + " " + c + " = " + vide + " & " + mdp + " = " + res + JSON.stringify(this.data) + " " + this.confirme)
+      //this.info.debugerr(l + " " + p + " " + m + " " + n + " " + pr + " " + c + " = " + vide + " & " + mdp + " = " + res + JSON.stringify(this.data) + " " + this.confirme)
       this.brutal = !res;
       //return vide;
     

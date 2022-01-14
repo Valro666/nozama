@@ -45,7 +45,7 @@ export class ConnexionComponent implements OnInit {
     let l = !(this.info.login == "");
     let p = !(this.info.pass == "");
     let lp = !(l&&p);
-    this.session.debugerr(l+" & "+p+" = "+lp)
+    //this.session.debugerr(l+" & "+p+" = "+lp)
 
     return lp
   }

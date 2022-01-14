@@ -19,7 +19,7 @@
             <li class="dropdown-submenu"*ngFor="let a of categorie()">
               <a class="dropdown-item" >{{a.categorie}}</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#"*ngFor="let b of a.sous">{{b}}</a></li>
+                <li><a class="dropdown-item" routerLink="acceuil" *ngFor="let b of a.sous">{{b}}</a></li>
               </ul>
             </li>
           </ul>

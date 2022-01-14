@@ -48,7 +48,7 @@ export class NavComponent implements OnInit {
     let c = localStorage.getItem("catesous");
     let cc = <any>{};
     cc  = JSON.parse(c);
-    this.session.debugerr(cc[1].sous)
+    //this.session.debugerr(cc[1].sous)
     return cc;
   }
 }
