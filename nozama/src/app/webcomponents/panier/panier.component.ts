@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Element } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 import { Article } from 'src/app/class/article';
@@ -13,57 +14,63 @@ import { InfoService } from 'src/app/service/info.service';
 })
 export class PanierComponent implements OnInit {
   panier: Array<Article>
-  prixtttab:number[]
+  prixtttab: number[]
   prixtt = 0
-  span : any[]
-  login:any
-  spa:any[]
- 
-  constructor(private http:HttpClient, private info : InfoService) { }
+  span: any[]
+  login: any
+  spa: any[]
+
+  constructor(private http: HttpClient, private info: InfoService, private route: Router) { }
 
 
   ngOnInit(): void {
     this.panier = JSON.parse(localStorage.getItem('panier'));
     this.login = JSON.parse(localStorage.getItem("infoclient")).login;
     this.spa = []
-    
+
   }
 
-  sendpanier(){
-    
+  tmp() {
+    let txt = '{"ligne" : [';
+    let liste: any[] = []
     this.panier.forEach(element => {
-      let semiligne = [element , element.quantite]
-      this.spa.push(semiligne);
+      let art = { "article": { "id": element.id }, "quantity": element.quantite }
+      liste.push(art);
     });
 
-   
-    let date = "2022-01-13T23:00:00.000+00:00"
-     this.span = [ this.spa,this.login ];
-    let body = JSON.stringify(this.span);
+    return { "ligne": liste, "client": { "login": this.login } }
+    return txt;
+  }
 
-    this.info.debugerr(body)
+  sendpanier() {
 
-     this.http.post("http://localhost:8080/tp/panier", body,{
-      headers : new HttpHeaders({
+    let body = this.tmp();
+
+    this.http.post("http://localhost:8080/tp/panier", body, {
+      headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
 
-      
+
 
     }).
-    subscribe(response => {
+      subscribe(response => {
 
-      console.log("crud service post OK");
-      
+        console.log("crud service post OK");
+        //this.info.debugerr("victoire")
+        localStorage.removeItem("panier");
+        this.route.navigate(["/acceuil"])
 
-    },
+      },
 
-      err => {
-        console.log("crud service post KO")
-        
-      });
+        err => {
+          console.log("crud service post KO")
+          this.info.debugerr(err)
+        });
 
-      
+
+
+
   }
 
   deletearticle(x) {
@@ -74,27 +81,27 @@ export class PanierComponent implements OnInit {
 
   }
 
-  majpanier(){
+  majpanier() {
     localStorage.setItem("panier", JSON.stringify(this.panier));
   }
 
-  prixligne(x){
-    x.prixtotal = x.prix*x.quantite
-    
-   
+  prixligne(x) {
+    x.prixtotal = x.prix * x.quantite
+
+
     return x.prixtotal
   }
 
-  prixPanier(){
+  prixPanier() {
     let sum = 0;
     this.panier.forEach(element => {
-      sum += (element.prix*element.quantite)
+      sum += (element.prix * element.quantite)
     });
     return sum;
   }
 
- 
 
- 
+
+
 
 }
