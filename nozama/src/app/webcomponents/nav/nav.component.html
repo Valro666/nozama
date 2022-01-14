@@ -17,7 +17,7 @@
           <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
             <!-- je pompe moins de ligne que toi =D  href="/categorie/{{a.categorie}}" -->
             <li class="dropdown-submenu"*ngFor="let a of categorie()">
-              <a class="dropdown-item" (click)="refresh(a.categorie)" >{{a.categorie}}</a>
+              <a class="dropdown-item" href="/categorie/{{a.categorie}}" >{{a.categorie}}</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/souscategorie/{{b}}" *ngFor="let b of a.sous">{{b}}</a></li>
               </ul>
@@ -25,56 +25,7 @@
           </ul>
         </li>
 
-        <!-- Liste déroulante-->
-        <!-- Button-->
-        <li class="nav-item dropdown ">
-          <a id="dLabel" role="button" data-toggle="dropdown" class="nav-link dropdown-toggle active" routerLink="#">
-            Catégorie <span class="caret"></span>
-          </a>
-          <!-- debut liste-->
-
-          <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-
-            <!-- 1er Choix-->
-            <li class="dropdown-submenu">
-              <a class="dropdown-item" href="#">Terrestre</a>
-
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Moto</a></li>
-                <li><a class="dropdown-item" href="#">Voiture</a></li>
-                <li><a class="dropdown-item" href="#">Camion</a></li>
-                <li><a class="dropdown-item" routerLink="souscategorie/Tank">Tank</a></li>
-                <li><a class="dropdown-item" href="#">Autres</a></li>
-              </ul>
-
-            </li>
-
-            <!-- 2eme Choix-->
-            <li class="dropdown-submenu">
-              <a class="dropdown-item" href="#">Maritimes</a>
-
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Bateaux</a></li>
-                <li><a class="dropdown-item" href="#">Sous-Marins</a></li>
-                <li><a class="dropdown-item" href="#">Autres</a></li>
-              </ul>
-
-            </li>
-
-
-            <!-- 3eme Choix-->
-            <li class="dropdown-submenu">
-              <a class="dropdown-item" href="#">Aériens</a>
-
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Avions</a></li>
-                <li><a class="dropdown-item" href="#">Hélicoptère</a></li>
-                <li><a class="dropdown-item" href="#">Drone</a></li>
-              </ul>
-
-            </li>
-            <!-- Fin choix-->
-          </ul>
+                 
 
       </ul>
 

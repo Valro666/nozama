@@ -1,15 +1,14 @@
-<app-nav></app-nav>
-
 {{ err() }}
 <div *ngIf="verou()">
-    verou
+    
     <div class="page">
         <app-con-ins></app-con-ins>
     </div>
 </div>
 
 <div *ngIf="!verou()">
-    ouvert
+    <app-nav></app-nav>
+    
     <div class="page">
         <router-outlet></router-outlet>
     </div>
