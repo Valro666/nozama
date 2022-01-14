@@ -48,6 +48,8 @@ public class PanierRestController {
 	@PostMapping
 	public void create(@RequestBody Panier panier) {
 		// System.out.println("coucou");
+		
+		panier.setDate(Single.getInstance().getDate());
 
 		System.out.println(panier);
 		
