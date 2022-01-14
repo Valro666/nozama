@@ -92,7 +92,7 @@ public class PanierRestController {
 		//System.out.println(panier);
 		panier_repo.save(p);
 	}
-
+//merge +1
 	@CrossOrigin
 	@PutMapping
 	public void update(@RequestBody Panier panier) {
