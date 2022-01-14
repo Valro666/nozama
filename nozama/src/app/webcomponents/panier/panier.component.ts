@@ -12,13 +12,28 @@ export class PanierComponent implements OnInit {
   panier: Array<Article>
   prixtttab:number[]
   prixtt = 0
+  span : any[]
+  login:any
+ 
   constructor() { }
 
 
   ngOnInit(): void {
     this.panier = JSON.parse(localStorage.getItem('panier'));
+    this.login = JSON.parse(localStorage.getItem("infoclient")).nom;
     
-    
+  }
+
+  sendpanier(){
+    var sp
+    var ligne
+    this.panier.forEach(element => {
+      ligne = ligne + [element , element.quantite]
+    });
+
+    var date = "2022-01-13T23:00:00.000+00:00"
+     this.span = [this.panier , date ,this.login ];
+
   }
 
   deletearticle(x) {
