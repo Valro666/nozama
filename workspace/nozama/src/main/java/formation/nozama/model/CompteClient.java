@@ -12,17 +12,8 @@ public class CompteClient {
 	private String pass;
 	private String nom;
 	private String prenom;
-	//private Panier panier;
 	private int version;
-	
-//	@OneToOne
-//	public Panier getPanier() {
-//		return panier;
-//	}
-//
-//	public void setPanier(Panier panier) {
-//		this.panier = panier;
-//	}
+
 
 	public void update(CompteClient maj) {
 		setLogin(maj.login);

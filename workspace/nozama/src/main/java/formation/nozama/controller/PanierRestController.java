@@ -48,31 +48,33 @@ public class PanierRestController {
 	@PostMapping
 	public void create(@RequestBody Panier panier) {
 		// System.out.println("coucou");
-		
+
 		panier.setDate(Single.getInstance().getDate());
 
 		System.out.println(panier);
-		
-		
+
 		panier_repo.save(panier);
 	}
+
 	@CrossOrigin
 	@GetMapping("{id}")
 	public Panier findId(@PathVariable(name = "id") String id) {
 
 		Optional<Panier> o = panier_repo.findById(Integer.parseInt(id));
 		return o.get();
-		//panier_repo.find
-		
+		// panier_repo.find
+
 	}
+
 	@CrossOrigin
 	@DeleteMapping("{id}")
 	public void delete(@PathVariable(name = "id") String id) {
 
 		panier_repo.deleteById(Integer.parseInt(id));
-		//panier_repo.find
-		
+		// panier_repo.find
+
 	}
+
 	@CrossOrigin
 	@PostMapping("test")
 	public void create2() {
@@ -88,15 +90,10 @@ public class PanierRestController {
 		p.setDate(date);
 		p.add(ligne);
 		p.add(ligne2);
-		p.setClient(solo.get());//
-		//System.out.println(panier);
+		p.setClient(solo.get());
+		// System.out.println(panier);
 		panier_repo.save(p);
 	}
-//merge +1
-	@CrossOrigin
-	@PutMapping
-	public void update(@RequestBody Panier panier) {
 
-	}
 
 }

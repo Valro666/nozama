@@ -2,63 +2,162 @@
 !theme reddress-darkred
 
 package model{
+class AllCate{
+    {field}     lc : List<Catesous>
+                repository : ArticleRepository
+}
+
 class Article {
-  {field}   prix : int
-            nom : String
-            description : String
-            categorie : String
-            sousCategorie : String
-            fabriquant : String
-            avis : List<Avis>
-    {method} getNote() : double
+    {field}     prix : int
+                nom : String
+                prix : int
+                img : String
+                description : String
+                categorie : String
+                sousCategorie : String
+                fabriquant : String
+    {method}    
 }
 
 class Avis{
-{field} note : int
-        commentaire : String
-        article : Article 
-        auteur : Personne 
+    {field}     id : int
+                note : int
+                commentaire : String
+                titre : String
+                articleId : int 
+                auteurId : String 
 }
-class Personne {
+
+class Catesous {
+    {field}     categorie : String
+                sous : List<String>
+}
+
+class CompteClient {
   {field}   login : String
-            password : String
+            pass : String
             nom : String
             prenom : String
             mail : String
-            Panier : enCour
-            List<Panier> : histo
 }
 
 class Ligne{
 {field} article : Article
         quantity : Int
-{method} getPrix(): Double
+{method} Total(): Double
 
 }
 class Panier {
-  {field}   panier : List<Ligne>
-            date : Date
-    {method} getPrix():Double
-}
+    {field}     id : int
+                panier : List<Ligne>
+                date : Date
+                client : CompteClient
+                login : String
+                version : int
+    {method}    getPrix():Double
 }
 
-package repository{
+class Single {
+    {field}     INSTANCE : Single
+    {method}    getInstance() : Single
+                getDate() : Date
+}
+
+}
+
+abstract JpaRepository
+package repository {
+    interface ArticleRepository{
+        {method}    findByNomContaining(String nom) : List<Article>
+                    findByCategorieContaining(String categorie) : List<Article> 
+                    findBySousCategorieContaining(String SousCategorie) : List<Article> 
+                    findByFabricantContaining(String Fabricant) : List<Article> 
+                    findByPrix(int prix) : List<Article> 
+    }
+
+    interface AvisRepository{
+        {method}    findByNote(int prix) : List<Avis>
+                    findByArticleId(int articleId) : List<Avis>
+    }
+
+    interface CompteClientRepository{
+        {method}    findByMailAndPass(int prix) : List<Avis>
+                    findByLoginAndPass(int articleId) : List<Avis>
+    }
+
+    interface PanierRepository{}
 
 }
 
 package controller {
+    class ArticleRestController{
+        {field}     repository : ArticleRepository
+        {method}    list() : List<Article>
+                    listcat() : List<Catesous>
+                    create() : void
+                    findById(int id) : Article
+                    update(Article article) : void
+                    delete(int id) : void
+                    findByNom(String nom) : List<Article>
+                    findByCategorie(String categorie) : List<Article>
+                    findBySousCategorie(String sousCategorie) : List<Article>
+    }
+    class AvisRestController{
+        {field}     repository : AvisRepository
+        {method}    list() : List<Avis>
+                    create() : void
+                    update() : void
+                    delete(int id) : void
+                    findById(int id) : Avis
+                    findByNom(int note) : List<Avis>
+                    findByArticleId(int articleid) : List<Article>
+    }
+    class CompteClientRestController{
+        {field}     repository : CompteClientRepository
+        {method}    list() : List<CompteClient>
+                    getOne(String id) : CompteClient
+                    create(CompteClient personne) : void
+                    update(CompteClient personne) : void
+                    delete(int id) : void
+                    findByLoginAndPass(String mail,String pass) : CompteClient
+    }
+    class PanierRestController{
+        {field}     panier_repo : PanierRepository
+                    article_repo : ArticleRepository
+                    cc_repo : CompteClientRepository
+        {method}    list() : List<Panier>
+                    create(Panier panier) : void
+                    findId(String id) : Article
+                    update(Article article) : void
+                    delete(String id) : void
+                    create2() : void
+    }
 
 }
-Personne "*"- Panier : historique >
-Personne "1"- Panier : en cours >
+
+AllCate --"*" Catesous
+AllCate --"1" ArticleRepository
+
+Ligne --"1" Article
+
+Panier --"*" Ligne :>
+Panier --"1" CompteClient
+
+ArticleRepository --> JpaRepository
+AvisRepository --> JpaRepository
+CompteClientRepository --> JpaRepository
+PanierRepository --> JpaRepository
+
+ArticleRestController --"1" ArticleRepository
+
+AvisRestController --"1" AvisRepository
+
+CompteClientRestController --"1" CompteClientRepository
+
+PanierRestController --"1" PanierRepository
+PanierRestController --"1" ArticleRepository
+PanierRestController --"1" CompteClientRepository
 
 
-Panier "*"- Ligne :>
-
-Ligne "1"- Article
-
-Article "*"- Avis :>
-
-Avis "1"- Personne :>
 
 @enduml

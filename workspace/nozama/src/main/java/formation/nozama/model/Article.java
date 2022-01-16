@@ -116,26 +116,6 @@ public class Article {
 	public void setFabricant(String fabricant) {
 		this.fabricant = fabricant;
 	}
-
-	//@OneToMany//(mappedBy="article",fetch=FetchType.EAGER)
-//	public List<Avis> getAvis() {
-//		return avis;
-//	}
-//
-//	public void setAvis(List<Avis> avis) {
-//		this.avis = avis;
-//	}
-	
-	
-//	public double noteAverage() {
-//		double totalNotes = 0;
-//		int notesAmount = 0;
-//		for(Avis a: avis){
-//			totalNotes += a.getNote(); 
-//			notesAmount++;
-//		}
-//		return totalNotes/notesAmount;
-//	}
 	
 	@Override
 	public String toString() {
