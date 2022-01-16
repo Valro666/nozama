@@ -46,7 +46,7 @@
 <!-- Avis unité (a généré) -->
         <div class="row mt-3" *ngFor="let x of avis ; let i = index">
             <h4>{{x.titre}}</h4>
-            <div class="col-sm-4 text-warning note" ><strong>{{test(x.note)}}</strong></div>
+            <div class="col-sm-4 " >By : {{x.auteurId}} || Note :<strong class="text-warning note pl-3"> {{test(x.note)}}</strong></div>
             <div class="col-sm-8 mb-3">
                 <p>{{x.commentaire}}</p>
             </div>
