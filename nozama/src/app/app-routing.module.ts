@@ -23,10 +23,9 @@ const routes: Routes = [
   { path: 'souscategorie/:souscat', component: SouscategorieComponent },
   { path: 'categorie/:categorie', component: CategorieComponent },
   { path: 'profil', component: ProfilComponent },
-  { path: 'con-ins', component: ConInsComponent },
-  { path: 'con-ins/:select', component: ConInsComponent },
+  { path: 'con-ins/:truc', component: ConInsComponent },
+  { path: 'con-ins/', component: ConInsComponent },
   { path: 'achatwin', component: AchatwinComponent },
-  //{ path: 'achatok', component: AchatokComponent }
 ];
 
 @NgModule({

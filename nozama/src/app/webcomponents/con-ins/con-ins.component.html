@@ -16,11 +16,10 @@
         
         
     </div>
-    <div class="blabla" *ngIf="selector == 'log'">
+    <div class="blabla" *ngIf="selector() == 'log'">
         <app-connexion></app-connexion>
     </div>
-        <div class="blabla" *ngIf="selector == 'ins'">
+        <div class="blabla" *ngIf="selector() == 'ins'">
         <app-inscription></app-inscription>
-        
     </div>
 </div>

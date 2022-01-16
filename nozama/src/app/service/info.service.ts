@@ -17,10 +17,18 @@ export class InfoService {
   logged = false;
   client: Client;
   readonly adresse_serv = "http://localhost:8080/tp/";
+  conins = "log";
 
   catesous: any;
   constructor(private http: HttpClient, private router: Router,) { }
 
+  getConins() {
+    return this.conins;
+  }
+
+  setConins(ci) {
+    this.conins = ci;
+  }
 
   updateClient(json) {
     const body = JSON.stringify(json);
@@ -98,13 +106,14 @@ export class InfoService {
         //this.debugerr("rep "+reponse)
         //alert("victoire " + JSON.stringify(reponse))
         localStorage.setItem("error_inscription", "win")
-        this.router.navigate(["/con-ins/log"]);
+        this.setConins("log")
+        //this.router.navigate(["/con-ins/log"]);
       },
       err => {
         //let tr = JSON.stringify(err)
         let ify = JSON.stringify(err);
         //let json = JSON.parse(err)
-        let tmp =JSON.stringify(err.error.error);
+        let tmp = JSON.stringify(err.error.error);
         //this.debugerr(tmp+"<------->"+ify)
         localStorage.setItem("error_inscription", "echec")
       })
