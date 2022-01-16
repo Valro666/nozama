@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Article } from 'src/app/class/article';
 
 @Component({
@@ -111,6 +111,11 @@ export class ArticleComponent implements OnInit {
 
         });
 
+        
+        this.newavis.commentaire=null;
+        this.newavis.titre=null;
+        
+        
   }
 
   unetoile() {
