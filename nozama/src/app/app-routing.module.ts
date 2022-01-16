@@ -11,6 +11,7 @@ import { SouscategorieComponent } from './webcomponents/souscategorie/souscatego
 import { CategorieComponent } from './webcomponents/categorie/categorie.component';
 import { ProfilComponent } from './webcomponents/profil/profil.component';
 import { ConInsComponent } from './webcomponents/con-ins/con-ins.component';
+import { AchatwinComponent } from './webcomponents/achatwin/achatwin.component';
 
 const routes: Routes = [
   { path: 'article/:id', component: ArticleComponent },
@@ -22,7 +23,10 @@ const routes: Routes = [
   { path: 'souscategorie/:souscat', component: SouscategorieComponent },
   { path: 'categorie/:categorie', component: CategorieComponent },
   { path: 'profil', component: ProfilComponent },
-  { path: 'con-ins', component: ConInsComponent }
+  { path: 'con-ins', component: ConInsComponent },
+  { path: 'con-ins/:select', component: ConInsComponent },
+  { path: 'achatwin', component: AchatwinComponent },
+  //{ path: 'achatok', component: AchatokComponent }
 ];
 
 @NgModule({

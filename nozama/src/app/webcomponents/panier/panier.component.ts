@@ -59,7 +59,7 @@ export class PanierComponent implements OnInit {
         console.log("crud service post OK");
         //this.info.debugerr("victoire")
         localStorage.removeItem("panier");
-        this.route.navigate(["/acceuil"])
+        this.route.navigate(["/achatwin"])
 
       },
 

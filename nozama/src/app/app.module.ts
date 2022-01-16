@@ -22,6 +22,7 @@ import { ProfilComponent } from './webcomponents/profil/profil.component';
 import { VerouComponent } from './webcomponents/verou/verou.component';
 import { ConInsComponent } from './webcomponents/con-ins/con-ins.component';
 import { AchatwinComponent } from './webcomponents/achatwin/achatwin.component';
+import { AchatokComponent } from './achatok/achatok.component';
 
 
 
@@ -45,6 +46,7 @@ import { AchatwinComponent } from './webcomponents/achatwin/achatwin.component';
     VerouComponent,
     ConInsComponent,
     AchatwinComponent,
+    AchatokComponent,
     //InfoService
 
 
