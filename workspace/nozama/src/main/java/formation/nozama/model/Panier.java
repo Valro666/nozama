@@ -21,16 +21,15 @@ public class Panier {
 	@ElementCollection
 	List<Ligne> ligne;
 	java.util.Date date;
-	@JoinColumn(name = "login", insertable = false, updatable = false)
+	// @JoinColumn(name = "login", insertable = false, updatable = false)
 	@OneToOne
 	CompteClient client;
-	@Column(name = "login")
-	private String login;
+	// @Column(name = "login")
+	// private String login;
 	@Version
 	int version;
 
-	
-	//init branche
+	// init branche
 	public int getId() {
 		return id;
 	}
@@ -78,23 +77,20 @@ public class Panier {
 
 	public void setClient(CompteClient client) {
 		this.client = client;
-		this.login = client.getLogin();
+		// this.login = client.getLogin();
 	}
 
 	@Override
 	public String toString() {
-		return "Panier [id=" + id + ", ligne=" + ligne + ", date=" + date + ", client=" + client + ", login="
-				+ login + ", version=" + version + "]";
+		return "Panier [id=" + id + ", ligne=" + ligne + ", date=" + date + ", client=" + client + ", version="
+				+ version + "]";
 	}
 
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String getLogin) {
-		this.login = getLogin;
-	}
-
+	/*
+	 * public String getLogin() { return login; }
+	 * 
+	 * public void setLogin(String getLogin) { this.login = getLogin; }
+	 */
 	public void add(Ligne ligne2) {
 		ligne.add(ligne2);
 	}
