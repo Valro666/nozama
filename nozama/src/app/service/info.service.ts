@@ -98,7 +98,7 @@ export class InfoService {
         //this.debugerr("rep "+reponse)
         //alert("victoire " + JSON.stringify(reponse))
         localStorage.setItem("error_inscription", "win")
-        this.router.navigate(["/", "connexion"]);
+        this.router.navigate(["/con-ins/log"]);
       },
       err => {
         //let tr = JSON.stringify(err)

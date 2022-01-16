@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-con-ins',
@@ -7,12 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConInsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
-  selector = "";
+  selector: String = '';
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.choix(params['select']);
+      //this.choix("log");
+      alert(this.selector)
+    });
   }
+
+
 
   choix(a) {
     this.selector = a;
