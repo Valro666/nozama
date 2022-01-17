@@ -1,9 +1,12 @@
-<div class="container">
-    <h2 class="text-center pt-5"> Votre Panier </h2>
+<div class="container pt-5">
+    <div class="bgperso ">
+    <h2 class="text-center pt-5"> Votre Devis : </h2>
     <hr>
-
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
     <table class="table align-self-center text-center">
-        <thead class="table-secondary">
+        <thead class=" table-light">
             <tr>
                 <th>Article</th>
                 <th>Prix unitaire</th>
@@ -15,19 +18,19 @@
         <tr  scope="row" *ngFor="let x of panier ; let i = index">
              
             <td class="tdimg">
-                {{x.nom}}
+                <strong>{{x.nom}}</strong>
             </td>
 
             <td class="td">
-                {{x.prix | currency:'':'':'3.0-1'}} €
+                <strong>{{x.prix | currency:'':'':'3.0-1'}} €</strong>
             </td>
-            <td class="tdqty justify-content-center">
+            <td class="tdqty ">
                 
-                    <input type="number" value="1" min="0" class="text-center form-control formperso" [(ngModel)]="x.quantite" (change)="majpanier()">
+                    <input type="number" value="1" min="0" class="mx-auto text-center form-control formperso" [(ngModel)]="x.quantite" (change)="majpanier()">
                 
             </td>
             <td class="td">
-               {{prixligne(x) | currency:'':'':'3.0-1'}} €
+               <strong>{{prixligne(x) | currency:'':'':'3.0-1'}} €</strong>
             </td>
             <td class="td">
                 <span class="my-5"><button type="button" class="btn btn-danger" (click)="deletearticle(i)"><i class="fa fa-trash" aria-hidden="true"></i></button></span>
@@ -38,12 +41,14 @@
     
     
     </table>
-
+</div>
+</div>
 <div class="row">
-    <div class="col-sm-6"></div>
-    <div class="col-sm-6 text-end mb-5">
-        <span class="pe-5">Prix : {{prixPanier()| currency:'':'':'3.0-1'}} €</span>
-        <button class="btn btn-warning ms-5 btn-lg" (click)="sendpanier()">Valider mon panier</button>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-7 text-end mb-5">
+        <span class="pe-5"><strong>Prix : {{prixPanier()| currency:'':'':'3.0-1'}} €</strong></span>
+        <button class="btn btn-warning ms-5 btn-lg" (click)="sendpanier()">Valider mon devis</button>
     </div>
+</div>
 </div>
 </div>
