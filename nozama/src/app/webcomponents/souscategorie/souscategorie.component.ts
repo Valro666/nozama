@@ -27,6 +27,7 @@ export class SouscategorieComponent implements OnInit {
       this.http.get<Article>("http://localhost:8080/tp/api/articleSousCatCon/"+this.souscat).subscribe(
         response => {
           this.tabArticles= response;
+          this.article=this.tabArticles[0];
           
         },
         err => {
