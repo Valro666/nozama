@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 .err{
     color: crimson;
 }
@@ -12,7 +13,8 @@ body {
 
 .card {
     width: 237px;
-    border-radius: 10px
+    border-radius: 10px;
+    height: 520px;
 }
 
 .card-img-top {
@@ -72,6 +74,7 @@ small.justify-content-center {
 }
 
 /*Fade Hover Effect*/
+
 .hover-fade a {
     display: block;
     position: relative;
@@ -104,4 +107,4 @@ small.justify-content-center {
     -moz-box-shadow: 0 0 3px rgb(0, 0, 0);
     -webkit-box-shadow: 0 0 3px rgb(0, 0, 0);
     box-shadow: 0 0 3px rgb(0, 0, 0);   
-} 
+} /**/
