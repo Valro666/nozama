@@ -52,13 +52,13 @@
       </div>
       <!--Button deconnexion -->
       <div *ngIf="islogged()">
-        <span style="color: cyan;">  Bonjour {{bonjour()}} </span>
+        
         <button class="btn btn-dark" role="button" type="button" routerLink="deconnexion">Deconnexion
         </button>
       </div>
       <!--Button profil -->
       <div *ngIf="islogged()">
-        <button class="btn btn-dark" role="button" type="button" routerLink="profil"><img src="assets/img/user.png" class="imgpanier">  profil
+        <button class="btn btn-dark" role="button" type="button" routerLink="profil"><span>{{bonjour() | uppercase}} </span>
         </button>
       </div>
 

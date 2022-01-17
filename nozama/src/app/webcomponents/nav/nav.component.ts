@@ -38,7 +38,8 @@ export class NavComponent implements OnInit {
     this.session.getAllCateSous();
   }
   bonjour() {
-    return JSON.parse(localStorage.getItem("infoclient")).nom
+    let a = JSON.parse(localStorage.getItem("infoclient")).nom + " " + JSON.parse(localStorage.getItem("infoclient")).prenom
+    return a
   }
 
   clear_sessionStorage() {
