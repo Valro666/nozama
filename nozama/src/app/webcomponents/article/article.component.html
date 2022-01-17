@@ -1,7 +1,7 @@
-<div class="container">
-
+<div class="container py-5">
+<div class="box px-5">
     <!-- Ligne 1 : Titre + img + btn achat-->
-    <div class="row  mt-5 pt-3 ">
+    <div class="row  pt-5  ">
         <div class="col-sm-6">
 
             <!-- Carousel -->
@@ -22,7 +22,7 @@
         <div class="col-sm-2 border rounded-3 ">
 
             <h3 class="text-center mt-2">{{article.prix| currency:'':'':'3.0-1'}}€</h3>
-            <p>livré a : Cient - cp client</p>
+            
             <hr>
             <label for="quantite" class="form-label">Quantité :</label>
             <div class="text-center">
@@ -103,6 +103,7 @@
     <button type="button" class="btn btn-lg btn-warning env" (click)="addavis()">
       <a class="dropdown-item" href="/article/{{id}}" >Envoyer</a></button>
   </div>
+</div>
 </div>
 </div>
 </div>
