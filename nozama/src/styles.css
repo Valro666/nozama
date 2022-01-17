@@ -111,6 +111,7 @@ small.justify-content-center {
 } 
 .ariane {
     color: black;
+    text-decoration: none;
 }
     
 .ariane:hover {
