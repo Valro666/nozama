@@ -21,7 +21,7 @@
 <!--Module d'ajout au panier-->
         <div class="col-sm-2 border rounded-3 ">
 
-            <h3 class="text-center mt-2">{{article.prix| currency:'':'':'3.0-1'}}€</h3>
+            <h3 class="text-center mt-2"><strong>{{article.prix| currency:'':'':'3.0-1'}}€</strong></h3>
             
             <hr>
             <label for="quantite" class="form-label">Quantité :</label>
@@ -61,10 +61,10 @@
         <h2>Avis des clients</h2>
         <hr>
 <!-- Avis unité (a généré) -->
-        <div class="row mt-3" *ngFor="let x of avis ; let i = index">
-            <h4>{{x.titre}}</h4>
-            <div class="col-sm-4 " >By : {{x.auteurId}} || Note :<strong class="text-warning note pl-3"> {{test(x.note)}}</strong></div>
-            <div class="col-sm-8 mb-3">
+        <div class="row mt-4" *ngFor="let x of avis ; let i = index">
+            <span><span class="fs-4 text">{{x.titre}} </span> <strong class="text-warning note pl-3"> {{test(x.note)}}</strong></span> 
+            <div class="col-sm-4 " >  by : {{x.auteurId}}</div>
+            <div class="col-sm-8 mb-3 ">
                 <p>{{x.commentaire}}</p>
             </div>
             <hr>
