@@ -37,7 +37,7 @@
 
         <form class="d-flex recherche ">
           <input class="form-control me-2 recherche" type="text" placeholder="Search">
-          <button class="btn bg-transparent text-light" type="button">
+          <button class="btn btn-dark" type="button">
             <img src="assets/img/loupe.png" class="imgpanier">
           </button>
         </form>
@@ -45,35 +45,32 @@
 
       <!--Button connexion -->
 
-      <div *ngIf="!islogged()">
+      <div *ngIf="!islogged()" >
         <button class="btn btn-outline-light" role="button" type="button" routerLink="connexion">Connexion
 
         </button>
       </div>
       <!--Button deconnexion -->
       <div *ngIf="islogged()">
-        <div style="color: cyan;">  Bonjour {{bonjour()}} ! </div>
-        <button class="btn btn-outline-light" role="button" type="button" routerLink="deconnexion">Deconnexion
+        <span style="color: cyan;">  Bonjour {{bonjour()}} </span>
+        <button class="btn btn-dark" role="button" type="button" routerLink="deconnexion">Deconnexion
         </button>
       </div>
       <!--Button profil -->
       <div *ngIf="islogged()">
-        <button class="btn btn-outline-light" role="button" type="button" routerLink="profil">profil
+        <button class="btn btn-dark" role="button" type="button" routerLink="profil"><img src="assets/img/user.png" class="imgpanier">  profil
         </button>
       </div>
 
-      <div><button class="btn btn-outline-light" role="button" type="button"
-          (click)="clear_sessionStorage()">clear_sessionStorage
-
-        </button></div>
+      
 
 
 
       <!-- Button panier-->
-      <button class="btn bg-transparent text-light btnpanier" type="button" routerLink="panier">
+      <button class="btn btn-dark " type="button" routerLink="panier">
 
-        <img src="assets/img/panier.png" class="imgpanier">
-        Panier
+        <img src="assets/img/new-document.png" class="imgpanier">
+        Devis
       </button>
 
     </div>
