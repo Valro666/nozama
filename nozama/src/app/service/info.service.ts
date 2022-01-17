@@ -30,6 +30,27 @@ export class InfoService {
     this.conins = ci;
   }
 
+  majcli(login, pass) {
+    this.http.get<Client>("http://localhost:8080/tp/client/" + login + "/" + pass).subscribe(reponse => {
+
+      if (reponse == null) {
+        //this.message = "error";
+        //this.debugerr("halp")
+      } else {
+        //this.debugerr("tarte")
+        this.client = reponse;
+        this.router.navigate(["/", "acceuil"]);
+        let j = JSON.stringify(["true", ""]);
+        localStorage.setItem("etat_service", j)
+        localStorage.setItem("infoclient", JSON.stringify(this.client));
+        //sessionStorage.setItem("etat_service", "JSON.stringify(this.session)")
+        //this.session.toSession()
+      }
+    }, err => {
+      //this.message = "erreur login/mot de passe";
+    })
+  }
+
   updateClient(json) {
     const body = JSON.stringify(json);
     this.http.put(this.adresse_serv + "client/", body, {
@@ -43,6 +64,10 @@ export class InfoService {
         //localStorage.setItem("error_inscription", "win")
         //this.debugerr("victoire")
         //this.router.navigate(["/", "connexion"]);
+        //let j  = JSON.parse(json)
+        //        this.debugerr(j.log + " " + json)
+        //this.debugerr(json)
+        this.majcli(json.login, json.pass);
       },
       err => {
         let tr = JSON.stringify(err)

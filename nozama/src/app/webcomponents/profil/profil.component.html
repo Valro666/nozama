@@ -16,13 +16,13 @@
                 <div class="form-outline mb-3">
                     <input type="password" id="form3Example4" class="form-control form-control-lg"
                         placeholder="mot de passe" [(ngModel)]="data.pass" (input)="brutalCheck()" />
-                    <label class="form-label" for="form3Example4" >nouveau mot de passe</label>
+                    <label class="form-label" for="form3Example4" > mot de passe</label>
                     <p class="err" *ngIf="vide(data.pass)">Champ vide</p>
                 </div>
                 <div class="form-outline mb-3">
                     <input type="password" id="form3Example4" class="form-control form-control-lg"
                         placeholder="mot de passe" [(ngModel)]="confirme" (input)="brutalCheck()" />
-                    <label class="form-label" for="form3Example4">repeter nouveau mot de passe</label>
+                    <label class="form-label" for="form3Example4">repeter mot de passe</label>
                     <p class="err" *ngIf="vide(data.pass)">Champ vide</p>
                 </div>
                 <!-- email input -->
@@ -51,10 +51,8 @@
                     <button type="button" class="btn btn-primary btn-lg"
                         style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="updateClient()"
                         [disabled]="brutal">mise a jour profil</button>
+<p>repeter votre Mot de Passe pour effectuer un changement</p>
 
-                    <!-- deja compe -->
-                    <p class="small fw-bold mt-2 pt-1 mb-0">Deja un compte ? <a routerLink="/connexion"
-                            class="link-danger">Connexion par ici !</a></p>
                 </div>
 
 

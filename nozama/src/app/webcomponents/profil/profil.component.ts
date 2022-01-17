@@ -55,6 +55,7 @@ export class ProfilComponent implements OnInit {
 
   updateClient() {
     this.info.updateClient(this.data)
+    let ic = JSON.parse(this.info.infoclient());
   }
 
   autrelog() {
