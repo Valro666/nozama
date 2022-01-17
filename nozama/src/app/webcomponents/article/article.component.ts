@@ -16,7 +16,7 @@ export class ArticleComponent implements OnInit {
   avis: any
   newavis = { articleId: 0, auteurId: null, commentaire: null, titre: null, note: NaN }
   message: string
-  moyenne: any
+  moyenne: number = 0;
   
 
 
@@ -72,6 +72,7 @@ export class ArticleComponent implements OnInit {
 
       response => {
         this.avis = response
+        this.noteAverage();
       }, err => {
         console.log("ID inexistant");
 
@@ -148,7 +149,13 @@ export class ArticleComponent implements OnInit {
     return toile
   }
 
-
+  noteAverage(){
+    for (let i = 0; i < this.avis.length; i++) {
+      this.moyenne += this.avis[i].note; 
+    }
+    this.moyenne = this.moyenne/this.avis.length;
+    
+  }
 }
 
 
